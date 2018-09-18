@@ -1,0 +1,89 @@
+<div class="home1">
+  <div class="page-header">
+    <h1 class="title">運転免許問題集<br><small>学科試験対策の決定版！</small></h1>
+  </div>
+  <p>このアプリは運転免許一発合格に特化した問題集アプリです。
+     ランダム一問一答機能では、問題数・分野別を自分で選択し空いた時間に気軽に対策が行えます。
+     ログイン機能を使えば学習進捗を管理し、間違えた問題だけ集中して学習に取り組めます。
+  </p>
+  <p class="question_btn_top col-xs-12 col-sm-5"><%= link_to "さっそく問題を解いてみる", itimon_ittous_index_path %></p>
+</div>
+<div class="home2">
+  <p class="login_btn col-xs-12"><%= link_to "ログイン", new_user_session_path %></p>
+  <p class="question_btn col-xs-12"><%= link_to "問題一覧", questions_path %></p>
+  <p class="usage_btn col-xs-12"><%= link_to "使い方", root_path %></p>
+  <p class="mypage_btn col-xs-12"><%= link_to "マイページを作る", new_user_registration_path %></p>
+</div>
+<div class="home3_background">
+  <div class="home3">
+    <div class="page-header">
+      <h2 class="title">使い方<br><small>このサイトの機能と勉強方法を紹介</small></h2>
+    </div>
+    <a href='#sec1' class="sec1">１.問題一覧から解く</a>
+    <a href='#sec2' class="sec2">２.一問一答で解く</a>
+    <a href='#sec3' class="sec3">３.間違えた問題だけ解く</a>
+  </div>
+</div>
+<div id="sec1" class="home4_background">
+  <div class="home4">
+    <h2>１.問題一覧から解く</h2>
+    <p>学習したい分野を選択</p>
+    <div class="image_sec1-3"></div>
+    <p>問題一覧で問題を確認</p>
+    <div class="image_sec1-3"></div>
+    <p>「答えを見る」を押して解説を確認</p>
+    <div class="image_sec1-3"></div>
+    <p class="home4_question_btn col-xs-12"><%= link_to "問題一覧へ", questions_path %></p>
+  </div>
+</div>
+<div id="sec2" class="home5_background">
+  <div class="home5">
+    <h2>２.一問一答で解く</h2>
+    <p>学習したい範囲・問題数を選択</p>
+    <div class="image"></div>
+    <p>ランダムに出てきた問題を◯×で回答</p>
+    <div class="image"></div>
+    <p>解答と解説を確認</p>
+    <div class="image"></div>
+    <p class="home5_question_btn col-xs-12"><%= link_to "一問一答へ", itimon_ittous_index_path %></p>
+  </div>
+</div>
+<div id="sec3" class="home6_background">
+  <div class="home6">
+    <h2>３.間違えた問題だけ解く</h2>
+    <p>マイページを作成する</p>
+    <div class="image"></div>
+    <p>ログインして一問一答へ</p>
+    <div class="image"></div>
+    <p>間違えた問題を選択してチャレンジ</p>
+    <div class="image"></div>
+    <p class="home6_question_btn col-xs-12"><%= link_to "マイページを作る", new_user_registration_path %></p>
+  </div>
+</div>
+<div  class="home7">
+  <p class="bottom_nav col-xs-12"><%= link_to "ページトップへ", "#" %></p>
+  <p class="bottom_nav col-xs-6"><%= link_to "ホーム", root_path %></p>
+  <p class="bottom_nav col-xs-6"><%= link_to "学科項目一覧", questions_path %></p>
+  <p class="bottom_nav col-xs-6"><%= link_to "使い方", usages_index_path %></p>
+  <p class="bottom_nav col-xs-6"><%= link_to "免許取得に関する情報", lisence_informations_index_path %></p>
+  <p class="bottom_nav col-xs-6"><%= link_to "運営者の情報", operations_index_path %></p>
+  <p class="bottom_nav col-xs-6"><%= link_to "個人情報保護方針", protection_of_personal_datas_index_path %></p>
+  <p class="bottom_nav col-xs-6"><%= link_to "利用規約", toss_index_path %></p>
+  <p class="bottom_nav col-xs-6"><%= link_to "お問い合わせ", new_contact_path %></p>
+  <p class="bottom_nav col-xs-12"><%= link_to "マイページを作る", root_path %></p>
+</div>
+
+<script>
+  $(function(){
+    // #で始まるリンクをクリックしたら実行されます
+    $('a[href^="#"]').click(function() {
+      // スクロールの速度
+      var speed = 400; // ミリ秒で記述
+      var href= $(this).attr("href");
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      var position = target.offset().top;
+      $('body,html').animate({scrollTop:position}, speed, 'swing');
+      return false;
+    });
+  });
+</script>

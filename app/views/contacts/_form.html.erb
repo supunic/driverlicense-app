@@ -1,0 +1,32 @@
+<%= form_with(model: contact, local: true) do |form| %>
+  <% if contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+      <% contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="contact_name">
+    <%= form.label :name %>
+    <p class="in_field"><%= form.text_field :name, id: :contact_name %></p>
+  </div>
+
+  <div class="contact_email">
+    <%= form.label :email %>
+    <p class="in_field"><%= form.text_field :email, id: :contact_email %></p>
+  </div>
+
+  <div class="contact_content">
+    <%= form.label :content %>
+    <p class="in_field"><%= form.text_area :content, id: :contact_content %></p>
+  </div>
+
+  <div class="contact_actions">
+    <%= form.submit "内容確認画面へ" %>
+  </div>
+<% end %>

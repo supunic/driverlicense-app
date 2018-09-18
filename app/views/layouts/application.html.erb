@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MenkyoApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <%= include_gon %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#gnavi">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="gnavi" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><%= link_to "ホーム", root_path %></li>
+            <li><%= link_to "問題一覧", questions_path %></li>
+            <li><%= link_to "一問一答", itimon_ittous_index_path %></li>
+            <% if user_signed_in? %>
+              <li><%= link_to "マイページ", user_path(current_user.id) %><li>
+              <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %><li>
+            <% else %>
+              <li><%= link_to "マイページを作る", new_user_registration_path %><li>
+              <li><%= link_to "ログイン", new_user_session_path %><li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <% if notice %>
+      <p class="alert alert-notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-error"><%= alert %></p>
+    <% end %>
+    <%= yield %>
+    <footer>
+      <p>© 2018 Copyright supunic</p>
+    </footer>
+  </body>
+</html>

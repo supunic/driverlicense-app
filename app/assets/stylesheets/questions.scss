@@ -1,0 +1,142 @@
+
+// タグ
+
+li {
+  list-style: none;
+  padding: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+
+// タイトル部分
+
+.questions_index_1_background {
+}
+
+.questions_index_1 {
+  padding: 0 10px 30px 10px;
+}
+
+
+
+// 仮免許部分
+
+.questions_index_2_background {
+  background-color: #202f55;
+};
+
+
+.questions_index_2 {
+  padding: 1px 10px 0 10px;
+  height: 1270px;
+  color: #fff;
+}
+
+.temporary_btn{
+  height: 60px;
+  border-radius: 8px;
+  background-color: #fff;
+  margin: 10px 0;
+}
+
+.temporary_btn a {
+  color: #202f55;
+  font-size: 16px;
+  display: block;
+  padding: 20px;
+}
+
+.temporary_btn:hover {
+  opacity: 0.7;
+}
+
+
+
+
+
+// 本試験部分
+
+.questions_index_3_background {
+ background-color: #fff;
+}
+
+.questions_index_3 {
+  padding: 0 10px;
+  height: 1200px;
+}
+
+.main_btn{
+  height: 60px;
+  border-radius: 8px;
+  background-color: #202f55;
+  margin-top: 20px;
+}
+
+
+.main_btn a {
+  color: #fff;
+  font-size: 16px;
+  display: block;
+  padding: 20px;
+}
+
+.main_btn:hover {
+  opacity: 0.7;
+}
+
+
+// 答えを隠すcss
+.devide_answer_div {
+  display: none;
+}
+
+// devide部分
+
+.devide1 {
+  margin: 0 10px 30px 10px;
+}
+
+.devide2_background {
+  background-color: #202f55;
+}
+
+.devide2 {
+  color: #fff;
+  margin: 0 10px;
+  padding: 30px 0;
+}
+
+.answer_confirm_btn{
+  height: 60px;
+  border-radius: 8px;
+  background-color: #fff;
+  margin-top: 20px;
+  color: #202f55;
+  font-size: 16px;
+  display: block;
+  padding: 20px;
+}
+
+.answer_confirm_btn:hover {
+  opacity: 0.7;
+}
+
+.close_btn{
+  height: 30px;
+  width: 60px;
+  border-radius: 8px;
+  background-color: #fff;
+  margin: 20px 0 10px 0;
+  color: #202f55;
+  font-size: 16px;
+  display: block;
+  padding: 5px;
+}
+
+.close_btn:hover {
+  opacity: 0.7;
+}

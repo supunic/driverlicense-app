@@ -1,0 +1,54 @@
+<script>
+$(function(){
+  var i = 0;
+  while(i < gon.devide_questions.length){
+    const index = i;
+    $('#answer_open_' + index).click(function(){
+      $(this).hide();
+      $('#devide_answer_div_' + index).fadeIn();
+    });
+    i++;
+  };
+});
+
+$(function(){
+  var i = 0;
+  while(i < gon.devide_questions.length){
+    const index = i;
+    $('#answer_close_' + index).click(function(){
+      $('#devide_answer_div_' + index).hide();
+      $('#answer_open_' + index).fadeIn();
+    });
+    i++;
+  };
+});
+</script>
+<div class="devide1">
+  <div class="page-header">
+    <h1><%= @devide_questions.first.field.field_name %></h1>
+  </div>
+</div>
+<div class="devide2_background">
+  <div class="devide2">
+    <% @devide_questions.each_with_index do |question, index| %>
+      <div id="devide_question_div_<%= index %>" class="devide_question_div">
+        <h2>問題</h2>
+        <p><%= question.content %></p>
+      </div>
+      <div class="answer_confirm_btn" id="answer_open_<%= index %>" value="<%= index %>">答えを確認</div>
+      <div id="devide_answer_div_<%= index %>" class="devide_answer_div">
+        <div class="close_btn" id="answer_close_<%= index %>">閉じる</div>
+        <p>答え：
+          <% kaitou = "◯" %>
+          <% if question.answer == false %>
+            <% kaitou = "×" %>
+          <% end %>
+          <%= kaitou %>
+        </p>
+        <p>解説：<%= question.explanation %></p>
+      </div>
+      <br><br><br>
+    <% end %>
+  </div>
+</div>
+<span><%= link_to '＜分野一覧へ戻る＞', questions_path %></span>

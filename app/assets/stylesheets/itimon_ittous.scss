@@ -1,0 +1,416 @@
+// メイン画面
+.itimon_ittou1 {
+  margin: 0 10px;
+  padding-bottom: 20px;
+}
+
+.itimon_ittou2_background {
+  background-color: #202f55;
+  min-height: 520px;
+}
+
+.itimon_ittou2 {
+  margin: 0 10px;
+  padding: 20px 0 60px 0;
+}
+
+.midashi {
+  color: #fff;
+  margin-top: 20px;
+}
+
+
+// 問題モーダル部
+
+.question_modal {
+  position:fixed;
+  display:none;
+  z-index:2;
+  width:100%;
+  margin:0;
+  padding:10px 20px;
+  border:2px solid #aaa;
+  background:#fff;
+  border-radius: 8px;
+}
+
+.question_modal p {
+  margin:0;
+  padding:0;
+}
+
+.question_modal_title {
+  color: #fff;
+  background-color: #202f55;
+  border-radius: 8px;
+  text-align: center;
+  padding: 5px;
+}
+.mondai_num {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.field {
+  text-align: left;
+  color: rgb(231, 103, 85);
+}
+
+.question {
+  font-size: 20px;
+  border: solid 2px #aaa;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+// ○ボタン
+
+.true {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #FFF;
+  background: rgb(222, 63, 63);
+  transition: .4s;
+  border-radius: 10px;
+  text-align: center;
+  height: 80px;
+}
+
+.true a {
+  color: #fff;
+  display: block;
+  font-size: 50px;
+
+}
+
+.true:active {
+  background: rgb(246, 149, 236);
+}
+
+.true:hover {
+  cursor:pointer;
+}
+
+
+// ×ボタン
+
+.false {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #FFF;
+  background: rgb(48, 89, 213);
+  transition: .4s;
+  border-radius: 10px;
+  text-align: center;
+  height: 80px;
+}
+
+.false a {
+  color: #fff;
+  display: block;
+  font-size: 50px;
+}
+
+.false:active {
+  background: #1ec7bb;
+}
+
+.false:hover {
+  cursor:pointer;
+}
+
+
+// 問題モーダルのオーバーレイ
+
+.question_modal_overlay {
+  z-index:1;
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:120%;
+  background-color:rgba(0,0,0,0.75);
+}
+
+
+
+
+// 解答モーダル部
+
+.answer_modal {
+  position:fixed;
+  display:none;
+  z-index:3;
+  width:100%;
+  margin:0;
+  padding:10px 20px;
+  border:2px solid #aaa;
+  background:#fff;
+  border-radius: 8px;
+}
+
+.answer {
+  font-size: 20px;
+  font-weight: bold;
+  height: 50px;
+  vertical-align: middle;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.explanation {
+  font-size: 20px;
+  border: solid 2px #aaa;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+// 解答時に生成する正誤表記
+
+.seikai {
+  width: 100%;
+  height: 30px;
+  color: #fff;
+  border-radius: 8px;
+  background-color: rgb(222, 63, 63);
+  z-index: 3;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.huseikai {
+  width: 100%;
+  height: 30px;
+  color: #fff;
+  border-radius: 8px;
+  background-color: rgb(48, 89, 213);
+  z-index: 3;
+  text-align: center;
+  padding-top: 5px;
+}
+
+
+
+// 解答モーダルのオーバーレイ
+
+.answer_modal_overlay {
+  z-index:2;
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:120%;
+  background-color:rgba(0,0,0,0.75);
+}
+
+// リザルトモーダル部
+.result_modal {
+  position:relative;
+  display:none;
+  z-index:2;
+  width:100%;
+  margin:0;
+  padding:10px 20px;
+  border:2px solid #aaa;
+  background:#fff;
+  border-radius: 8px;
+}
+
+.result_modal p {
+  margin:0;
+  padding:0;
+}
+
+
+// 決定ボタン
+.kettei_btn {
+  height: 60px;
+  border-radius: 8px;
+  margin-top: 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.kettei_btn a {
+  color: #202f55;
+  font-size: 16px;
+  display: block;
+  padding: 20px;
+}
+
+.kettei_btn:hover {
+  cursor:pointer;
+  opacity: 0.7;
+  text-decoration:none;
+}
+
+// はじめるボタン
+.hazimeru_btn{
+  height: 60px;
+  border-radius: 8px;
+  margin-top: 20px;
+  background-color: #fff;
+  text-align: center;
+  display: none;
+}
+
+.hazimeru_btn:hover {
+  cursor:pointer;
+  text-decoration:none;
+  opacity: 0.7;
+}
+
+.hazimeru_btn a {
+  color: #202f55;
+  font-size: 16px;
+  display: block;
+  padding: 20px;
+}
+
+
+// 次の問題ヘ進むボタン
+.next_btn {
+  text-align: center;
+  height: 40px;
+  border-radius: 8px;
+  margin-top: 10px;
+  padding-top: 10px;
+  background-color: #202f55;
+  color: #fff;
+}
+.next_btn:hover {
+  opacity: 0.7;
+  cursor:pointer;
+}
+
+
+// 結果を表示ボタン
+.result_btn{
+  text-align: center;
+  height: 40px;
+  border-radius: 8px;
+  margin-top: 10px;
+  padding-top: 10px;
+  background-color: #202f55;
+  color: #fff;
+  display: none;
+}
+
+.result_btn:hover {
+  opacity: 0.7;
+  cursor:pointer;
+}
+
+
+// 未ログイン時のアナウンス
+.announce_sign_up {
+  background-color: #fff;
+  border: dotted 1px #333;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.sigh_up_btn {
+  background-color: #202f55;
+  border-radius: 8px;
+  height: 50px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.sigh_up_btn a {
+  color: #fff;
+  display: block;
+  padding: 15px;
+}
+
+.sigh_up_btn:hover {
+  opacity: 0.7;
+}
+
+
+// 結果画面
+
+.result_n {
+  font-size: 20px;
+  margin: 20px 0 10px 0;
+  background-color: #202f55;
+  // width: 80px;
+  color: #fff;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.result_true {
+  background-color: rgb(222, 63, 63);
+  border-radius: 8px;
+  color: #fff;
+  text-align: center;
+}
+
+.result_false {
+  background-color: rgb(48, 89, 213);
+  border-radius: 8px;
+  color: #fff;
+  text-align: center;
+}
+
+.result_question {
+  font-size: 16px;
+  border:2px solid #aaa;
+  margin: 10px 0;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.result_answer {
+  font-size: 16px;
+  border:2px solid #aaa;
+  background-color: #aaa;
+  padding: 5px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  font-weight: bold;
+}
+
+.result_explanation {
+  font-size: 16px;
+  border:2px solid #aaa;
+  padding: 5px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  margin-bottom: 40px;
+}
+
+.seitouritu {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+// 結果画面のボタン
+.kakunin_btn {
+  background-color: #202f55;
+  border-radius: 8px;
+  height: 50px;
+  text-align: center;
+  margin: 20px 0;
+}
+.kakunin_btn a {
+  color: #fff;
+  display: block;
+  padding: 15px;
+}
+.kakunin_btn:hover {
+  opacity: 0.7;
+}

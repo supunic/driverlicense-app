@@ -1,0 +1,352 @@
+<script>
+$(function(){
+  $('.kettei_btn').click(function(){
+    $(this).hide();
+    $('.setsumei').hide();
+    $('.select_num_div').hide();
+    $('.select_field_div').hide();
+    $('.select_questions_div').hide();
+
+    $('.hazimeru_btn').fadeIn();
+
+    var select_num = $('#select_num').val();
+    var select_field = $('#select_field').val();
+    var select_questions = $('#select_questions').val();
+
+    function random(array, num) {
+      var a = array;
+      var t = [];
+      var r = [];
+      var l = a.length;
+      var n = num < l ? num : l;
+      while (n-- > 0) {
+        var i = Math.random() * l | 0;
+        r[n] = t[i] || a[i];
+        --l;
+        t[i] = t[l] || a[l];
+      }
+      return r;
+    };
+
+    function selectdFieldQuestions(){
+      if(select_field == "all_fields"){
+        fieldIdArray = gon.questions;
+      }else if(select_field == "temporary"){
+        var temporary = [];
+        for (var i = 0;  i < gon.fields.length; i++) {
+          if(gon.fields[i].temporary == true){
+            temporary.push(gon.fields[i].id);
+          };
+        };
+        for (var x = 0;  x < gon.questions.length; x++) {
+          var fieldId = gon.questions[x].field_id;
+          for (var y = 0; y < temporary.length; y++) {
+            var tem = temporary[y];
+            if (tem == fieldId){
+              fieldIdArray.push(gon.questions[x]);
+            };
+          };
+        };
+      }else{
+        for (var i = 0;  i < gon.questions.length; i++) {
+          if (gon.questions[i].field_id == select_field){
+            fieldIdArray.push(gon.questions[i]);
+          };
+        };
+      };
+    };
+
+    function onlyWrongQuestions(){
+      if(select_questions == "wrong_questions"){
+        var wrongQuestion = [];
+        for (var i = 0;  i < gon.torves.length; i++) {
+          if(gon.torves[i].answer_log == false){
+            wrongQuestion.push(gon.torves[i].question_id);
+          };
+        };
+        for (var x = 0;  x < fieldIdArray.length; x++) {
+          var questionId = fieldIdArray[x].id;
+          for (var y = 0; y < wrongQuestion.length; y++) {
+            var wrong = wrongQuestion[y];
+            if (wrong == questionId){
+              userSelectQuestions.push(fieldIdArray[x]);
+            };
+          };
+        };
+      }else{
+        userSelectQuestions = fieldIdArray;
+      };
+    };
+    var fieldIdArray = [];
+    var userSelectQuestions = [];
+    selectdFieldQuestions();
+    onlyWrongQuestions();
+    samples = random(userSelectQuestions, select_num);
+  });
+});
+
+$(function(){
+  $('.next_btn').click(function(){
+    $('body').append('<div class="question_modal_overlay"></div>');
+    $('body').append('<div class="answer_modal_overlay"></div>');
+    $('#questionModal').fadeOut();
+    $('.question_modal_overlay').fadeOut(function(){
+      $('.question_modal_overlay').remove();
+    });
+    $('#answerModal').fadeOut();
+    $('.answer_modal_overlay').fadeOut(function(){
+      $('.answer_modal_overlay').remove();
+    });
+    $('.seikai').fadeOut(function(){
+      $('.seikai').remove();
+    });
+    $('.huseikai').fadeOut(function(){
+      $('.huseikai').remove();
+    });
+
+    gon.count += 1;
+    var num = gon.count + 1;
+
+    $.ajax({
+      url: '/itimon_ittous/index',
+      type: 'GET',
+      dataType: 'html',
+      async: true,
+      data: {
+        count: gon.count,
+        questions: samples,
+      },
+    });
+
+    $('#mondai_num').html(num + '/' + samples.length);
+    $('#field').html('分野：' + gon.fields[samples[gon.count].field_id].field_name);
+    $('#question').html(samples[gon.count].content);
+
+    if (num === samples.length) {
+      $('.next_btn').hide();
+      $('.result_btn').show();
+    };
+
+    modalResize();
+    $('#questionModal').fadeIn();
+    $(window).on('resize', function(){
+        modalResize();
+    });
+    function modalResize(){
+        var w = $(window).width();
+        var h = $(window).height();
+        var x = (w - $('#questionModal').outerWidth(true)) / 2;
+        var y = (h - $('#questionModal').outerHeight(true)) / 4;
+        $('#questionModal').css({'left': x + 'px','top': y + 'px'});
+    }
+  });
+});
+
+$(function(){
+  $('.result_btn').click(function(){
+    $.ajax({
+      url: '/itimon_ittous/show',
+      type: 'POST',
+      dataType: 'html',
+      async: true,
+      data: {
+        count: gon.count,
+        questions: samples,
+        result: gon.result
+      },
+    });
+    $('body').append('<div class="question_modal_overlay"></div>');
+    $('body').append('<div class="answer_modal_overlay"></div>');
+    $('#questionModal').fadeOut();
+    $('.question_modal_overlay').fadeOut();
+    $('#answerModal').fadeOut();
+    $('.answer_modal_overlay').fadeOut(function(){
+      $('.answer_modal_overlay').remove();
+    });
+    $('.seikai').fadeOut(function(){
+      $('.seikai').remove();
+    });
+    $('.huseikai').fadeOut(function(){
+      $('.huseikai').remove();
+    });
+    var value = Object.values(gon.result);
+    var true_num = 0;
+    for (var i = 0;  i < value.length; i++) {
+      if(value[i] == true){
+      true_num++;
+      };
+    };
+    var percentageOfCorrectAnswers = true_num / value.length *100;
+    $('#resultModal').prepend('<div class="page-header"><h1 class="kekka_modal">今回の結果</h1></div>');
+    $('#resultModal').append('<p class="seitouritu">' + value.length + '問中' + true_num + '問正解！' +  '（正答率：' + percentageOfCorrectAnswers + '%）</p>');
+// debugger
+    for (var i = 0;  i < value.length; i++) {
+      var n = i + 1;
+      var questionId = samples[i].id
+      $('#resultModal').append('<div class="result_n">' + n + '問目</div>');
+      if(gon.result[questionId] == true){
+        var torf = "正解"
+        $('#resultModal').append('<div class="result_true">' + torf + '</div>');
+      }else{
+        var torf = "不正解"
+        $('#resultModal').append('<div class="result_false">' + torf + '</div>');
+      };
+      $('#resultModal').append('<div class="result_question">' + samples[i].content + '</div>');
+      if(samples[i].answer == true){
+        var answer = "○"
+      }else{
+        var answer = "×"
+      };
+      $('#resultModal').append('<div class="result_answer">答え：' + answer + '</div>');
+      $('#resultModal').append('<div class="result_explanation">' + samples[i].explanation + '</div>')
+    };
+    $('#resultModal').append('<div class="kakunin_btn"><a href="/itimon_ittous/index" >もう一度挑戦</a></div>');
+    $('#resultModal').append('<div class="kakunin_btn"><a href="/" >ホームへ</a></div>');
+    // $('.question_modal_overlay').fadeIn();
+    // modalResize();
+    $('#resultModal').fadeIn();
+    // $(window).on('resize', function(){
+    //   modalResize();
+    // });
+    // function modalResize(){
+    //   var w = $(window).width();
+    //   var h = $(window).height();
+    //   var x = (w - $('#resultModal').outerWidth(true)) / 2;
+    //   var y = (h - $('#resultModal').outerHeight(true)) / 4;
+    //   $('#resultModal').css({'left': x + 'px','top': 0 + 'px'});
+    //   debugger
+    // };
+  });
+});
+
+$(function(){
+  $('.hazimeru_btn').click(function(){
+    $(this).fadeOut();
+      modalResize();
+      var num = gon.count + 1;
+      if (num === samples.length) {
+        $('.next_btn').hide();
+        $('.result_btn').show();
+      };
+      $('#mondai_num').html(num + '/' + samples.length);
+      $('#field').html('分野：' + gon.fields[samples[gon.count].field_id].field_name);
+      $('#question').html(samples[gon.count].content);
+      $('#questionModal').fadeIn();
+      $(window).on('resize', function(){
+        modalResize();
+      });
+      function modalResize(){
+          var w = $(window).width();
+          var h = $(window).height();
+          var x = (w - $('#questionModal').outerWidth(true)) / 2;
+          var y = (h - $('#questionModal').outerHeight(true)) / 4;
+          $('#questionModal').css({'left': x + 'px','top': y + 'px'});
+      };
+  });
+});
+
+$(function(){
+  $('.kaitou_btn').click(function(){
+    $('body').append('<div class="answer_modal_overlay"></div>');
+    $('.answer_modal_overlay').fadeIn();
+    var user_answer = Boolean($(this).attr('value'));
+    var collect_answer = samples[gon.count].answer;
+    if (user_answer === collect_answer){
+      $('#answerModal').prepend('<div class="seikai">正解!</div>')
+      gon.result[samples[gon.count].id] = true
+    }else{
+      $('#answerModal').prepend('<div class="huseikai">不正解</div>')
+      gon.result[samples[gon.count].id] = false
+    };
+    modalResize();
+    if (samples[gon.count].answer === true){
+      $('#answer').html('答え：○')
+    }else{
+      $('#answer').html('答え：×')
+    };
+    $('#explanation').html(samples[gon.count].explanation);
+    $('#answerModal').fadeIn();
+    $(window).on('resize', function(){
+        modalResize();
+    });
+    function modalResize(){
+        var w = $(window).width();
+        var h = $(window).height();
+        var x = (w - $('#answerModal').outerWidth(true)) / 2;
+        var y = (h - $('#answerModal').outerHeight(true)) / 4;
+        $('#answerModal').css({'left': x + 'px','top': y + 'px'});
+    };
+  });
+});
+</script>
+
+
+<div class="itimon_ittou1">
+  <div class="page-header">
+    <h1>一問一答<br><small>問題一覧からランダムに出題</small></h1>
+  </div>
+  <p class="setsumei">ランダムに出題される問題を一問一答していきます。<br>
+     問題数・出題範囲を選択し、「決定」ボタンを押してください。
+  </p>
+</div>
+<div class="itimon_ittou2_background">
+  <div class="itimon_ittou2">
+    <div class="select_num_div">
+      <h4 class="midashi">問題数を選ぶ</h4>
+      <select id="select_num">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+        <option value="30">30</option>
+      </select>
+    </div>
+    <div class="select_field_div">
+      <h4 class="midashi">出題範囲を選ぶ</h4>
+      <select id="select_field" class="select_field">
+        <option value="all_fields">全ての範囲から出題</option>
+        <option value="temporary">仮免許の範囲から出題</option>
+        <% @fields.each do |field|%>
+          <option value="<%= field.id.to_json %>">分野別に出題：<%= field.field_name %></option>
+        <% end %>
+      </select>
+    </div>
+    <div class="select_questions_div">
+      <h4 class="midashi">問題を選ぶ</h4>
+      <% if user_signed_in? %>
+        <select id="select_questions">
+          <option value="all_questions">全ての問題から出題</option>
+          <option value="wrong_questions">間違えた問題から出題</option>
+        </select>
+      <% else %>
+        <div class="announce_sign_up">
+          <p>ログインしてないので選べません。<br>
+             ログインすると間違った問題だけ選択できます。
+          </p>
+          <p class="sigh_up_btn"><%= link_to "ログインする", new_user_session_path %></p>
+        </div>
+      <% end %>
+    </div>
+    <p class="kettei_btn col-xs-12"><a id="ketteiBtn">決定</a></p>
+    <p class="hazimeru_btn col-xs-12"><a data-target="#questionModal">はじめる</a></p>
+    <div id="questionModal" class="question_modal">
+      <h2 class="question_modal_title">問題</h2>
+      <p id="mondai_num" class="mondai_num"></p>
+      <ul class="tab">
+        <li id="field" class="field"></li>
+        <li id="question" class="question"></li>
+        <li class="true col-xs-5"><a data-target="#answerModal" class="kaitou_btn" value="true">◯</a></li>
+        <li class="false col-xs-offset-2 col-xs-5"><a data-target="#answerModal" class="kaitou_btn" value="">×</a></li>
+      </ul>
+    </div>
+    <div id="answerModal" class="answer_modal">
+      <ul>
+        <li id="answer" class="answer"></li>
+        <li id="explanation" class="explanation"></li>
+      </ul>
+      <p class="next_btn">次の問題に進む</p>
+      <p class="result_btn">結果を表示</p>
+    </div>
+    <div id="resultModal" class="result_modal">
+  </div>
+</div>

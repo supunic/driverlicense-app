@@ -1,0 +1,2 @@
+module ProtectionOfPersonalDatasHelper
+end
