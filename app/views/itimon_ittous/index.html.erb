@@ -1,6 +1,7 @@
 <script>
 $(function(){
   $('.kettei_btn').click(function(){
+    gon.count = 0;
     $(this).hide();
     $('.setsumei').hide();
     $('.select_num_div').hide();
@@ -200,6 +201,8 @@ $(function(){
       $('#resultModal').append('<div class="result_answer">答え：' + answer + '</div>');
       $('#resultModal').append('<div class="result_explanation">' + samples[i].explanation + '</div>')
     };
+    gon.count = 0;
+    gon.result = {};
     $('#resultModal').append('<div class="kakunin_btn"><a href="/itimon_ittous/index" >もう一度挑戦</a></div>');
     $('#resultModal').append('<div class="kakunin_btn"><a href="/" >ホームへ</a></div>');
     // $('.question_modal_overlay').fadeIn();
@@ -307,7 +310,7 @@ $(function(){
         <option value="all_fields">全ての範囲から出題</option>
         <option value="temporary">仮免許の範囲から出題</option>
         <% @fields.each do |field|%>
-          <option value="<%= field.id.to_json %>">分野別に出題：<%= field.field_name %></option>
+          <option value="<%= field.id.to_json %>">分野別：<%= field.field_name %></option>
         <% end %>
       </select>
     </div>

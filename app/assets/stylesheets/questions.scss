@@ -50,7 +50,7 @@ ul {
   padding: 20px;
 }
 
-.temporary_btn:hover {
+.temporary_btn:active {
   opacity: 0.7;
 }
 
@@ -84,7 +84,7 @@ ul {
   padding: 20px;
 }
 
-.main_btn:hover {
+.main_btn:active {
   opacity: 0.7;
 }
 
@@ -121,7 +121,7 @@ ul {
   padding: 20px;
 }
 
-.answer_confirm_btn:hover {
+.answer_confirm_btn:active {
   opacity: 0.7;
 }
 
@@ -137,6 +137,6 @@ ul {
   padding: 5px;
 }
 
-.close_btn:hover {
+.close_btn:active {
   opacity: 0.7;
 }
