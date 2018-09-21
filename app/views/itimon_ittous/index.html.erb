@@ -123,7 +123,9 @@ $(function(){
     $('#field').html('分野：' + gon.fields[samples[gon.count].field_id].field_name);
     if(samples[gon.count].image){
       var src = $('#image').children('img').attr('src').replace('sec1-1.png', samples[gon.count].image);
+      debugger
       $('#image').children('img').attr('src', src);
+      debugger
       $('#image').children('img').fadeIn();
     }else{
       $('#image').children('img').hide();
@@ -355,7 +357,7 @@ $(function(){
       <p id="mondai_num" class="mondai_num"></p>
       <ul class="tab">
         <li id="field" class="field"></li>
-        <li id="image" class="image"><img src="/assets/sec1-1.png" alt="image"></li>
+        <li id="image" class="image"><img src="<%= asset_path "sec1-1.png" %>" alt="image"></li>
         <li id="question" class="question"></li>
         <li class="true col-xs-5"><a data-target="#answerModal" class="kaitou_btn" value="true">◯</a></li>
         <li class="false col-xs-offset-2 col-xs-5"><a data-target="#answerModal" class="kaitou_btn" value="">×</a></li>
