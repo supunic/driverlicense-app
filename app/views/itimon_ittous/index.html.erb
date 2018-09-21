@@ -123,9 +123,9 @@ $(function(){
     $('#field').html('分野：' + gon.fields[samples[gon.count].field_id].field_name);
     if(samples[gon.count].image){
       var src = $('#image').children('img').attr('src').replace('sec1-1.png', samples[gon.count].image);
-      debugger
+      // debugger
       $('#image').children('img').attr('src', src);
-      debugger
+      // debugger
       $('#image').children('img').fadeIn();
     }else{
       $('#image').children('img').hide();
