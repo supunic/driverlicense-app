@@ -31,24 +31,28 @@ $(function(){
 <div class="devide2_background">
   <div class="devide2">
     <% @devide_questions.each_with_index do |question, index| %>
-      <div id="devide_question_div_<%= index %>" class="devide_question_div">
-        <h2>問題</h2>
-        <p><%= question.content %></p>
-      </div>
-      <div class="answer_confirm_btn" id="answer_open_<%= index %>" value="<%= index %>">答えを確認</div>
-      <div id="devide_answer_div_<%= index %>" class="devide_answer_div">
-        <div class="close_btn" id="answer_close_<%= index %>">閉じる</div>
-        <p>答え：
-          <% kaitou = "◯" %>
-          <% if question.answer == false %>
-            <% kaitou = "×" %>
+      <div class="devide_question_background">
+        <div id="devide_question_div_<%= index %>" class="devide_question_div">
+          <h2 class="title_mondai">問題</h2>
+          <% if question.image.present? %>
+            <div class="image_div"><%= image_tag question.image %></div>
           <% end %>
-          <%= kaitou %>
-        </p>
-        <p>解説：<%= question.explanation %></p>
+          <p class="question_content"><%= question.content %></p>
+        </div>
+        <div class="answer_confirm_btn" id="answer_open_<%= index %>" value="<%= index %>">答えを確認</div>
+        <div id="devide_answer_div_<%= index %>" class="devide_answer_div">
+          <div class="close_btn" id="answer_close_<%= index %>">閉じる</div>
+          <p class="mondai_kotae">答え：
+            <% kaitou = "◯" %>
+            <% if question.answer == false %>
+              <% kaitou = "×" %>
+            <% end %>
+            <%= kaitou %>
+          </p>
+          <p><%= question.explanation %></p>
+        </div>
       </div>
-      <br><br><br>
     <% end %>
+    <div class="modoru_btn"><%= link_to '戻る', questions_path %></div>
   </div>
 </div>
-<span><%= link_to '＜分野一覧へ戻る＞', questions_path %></span>

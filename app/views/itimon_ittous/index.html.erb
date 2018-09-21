@@ -90,18 +90,18 @@ $(function(){
   $('.next_btn').click(function(){
     $('body').append('<div class="question_modal_overlay"></div>');
     $('body').append('<div class="answer_modal_overlay"></div>');
-    $('#questionModal').fadeOut();
+    $('#questionModal').hide();
     $('.question_modal_overlay').fadeOut(function(){
       $('.question_modal_overlay').remove();
     });
-    $('#answerModal').fadeOut();
+    $('#answerModal').hide();
     $('.answer_modal_overlay').fadeOut(function(){
       $('.answer_modal_overlay').remove();
     });
-    $('.seikai').fadeOut(function(){
+    $('.seikai').hide(function(){
       $('.seikai').remove();
     });
-    $('.huseikai').fadeOut(function(){
+    $('.huseikai').hide(function(){
       $('.huseikai').remove();
     });
 
@@ -121,6 +121,13 @@ $(function(){
 
     $('#mondai_num').html(num + '/' + samples.length);
     $('#field').html('分野：' + gon.fields[samples[gon.count].field_id].field_name);
+    if(samples[gon.count].image){
+      var src = $('#image').children('img').attr('src').replace('sec1-1.png', samples[gon.count].image);
+      $('#image').children('img').attr('src', src);
+      $('#image').children('img').fadeIn();
+    }else{
+      $('#image').children('img').hide();
+    };
     $('#question').html(samples[gon.count].content);
 
     if (num === samples.length) {
@@ -179,7 +186,7 @@ $(function(){
     };
     var percentageOfCorrectAnswers = true_num / value.length *100;
     $('#resultModal').prepend('<div class="page-header"><h1 class="kekka_modal">今回の結果</h1></div>');
-    $('#resultModal').append('<p class="seitouritu">' + value.length + '問中' + true_num + '問正解！' +  '（正答率：' + percentageOfCorrectAnswers + '%）</p>');
+    $('#resultModal').append('<p class="seitouritu">' + value.length + '問中' + true_num + '問正解！' +  '（正答率：' + percentageOfCorrectAnswers.toFixed(1) + '%）</p>');
 // debugger
     for (var i = 0;  i < value.length; i++) {
       var n = i + 1;
@@ -233,6 +240,17 @@ $(function(){
       };
       $('#mondai_num').html(num + '/' + samples.length);
       $('#field').html('分野：' + gon.fields[samples[gon.count].field_id].field_name);
+      // $('#question').html(samples[gon.count].image);
+      // $('#image').children('img').attr('src', samples[gon.count].image);
+      if(samples[gon.count].image){
+        var src = $('#image').children('img').attr('src').replace('sec1-1.png', samples[gon.count].image);
+        $('#image').children('img').attr('src', src);
+        $('#image').children('img').fadeIn();
+      }else{
+        $('#image').children('img').hide();
+      };
+      // debugger
+      // $('#image').children('img').attr('src', src);
       $('#question').html(samples[gon.count].content);
       $('#questionModal').fadeIn();
       $(window).on('resize', function(){
@@ -337,6 +355,7 @@ $(function(){
       <p id="mondai_num" class="mondai_num"></p>
       <ul class="tab">
         <li id="field" class="field"></li>
+        <li id="image" class="image"><img src="/assets/sec1-1.png" alt="image"></li>
         <li id="question" class="question"></li>
         <li class="true col-xs-5"><a data-target="#answerModal" class="kaitou_btn" value="true">◯</a></li>
         <li class="false col-xs-offset-2 col-xs-5"><a data-target="#answerModal" class="kaitou_btn" value="">×</a></li>

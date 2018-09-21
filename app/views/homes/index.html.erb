@@ -9,10 +9,14 @@
   <p class="question_btn_top col-xs-12 col-sm-5"><%= link_to "さっそく問題を解いてみる！", itimon_ittous_index_path %></p>
 </div>
 <div class="home2">
-  <p class="login_btn col-xs-12"><%= link_to "ログイン", new_user_session_path %></p>
-  <p class="question_btn col-xs-12"><%= link_to "問題一覧", questions_path %></p>
+  <% if user_signed_in? %>
+    <p class="login_btn col-xs-12"><%= link_to "マイページ", user_path(current_user.id) %></p>
+  <% else %>
+    <p class="login_btn col-xs-12"><%= link_to "ログイン", new_user_session_path %></p>
+  <% end %>
   <p class="usage_btn col-xs-12"><%= link_to "使い方",  '#sec0' %></p>
-  <p class="mypage_btn col-xs-12"><%= link_to "マイページを作る", new_user_registration_path %></p>
+  <p class="question_btn col-xs-12"><%= link_to "問題一覧", questions_path %></p>
+  <p class="mypage_btn col-xs-12"><%= link_to "一問一答", itimon_ittous_index_path %></p>
 </div>
 <div id="sec0" class="home3_background">
   <div class="home3">

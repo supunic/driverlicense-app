@@ -88,10 +88,19 @@ ul {
   opacity: 0.7;
 }
 
+.devide_question_background {
+  background-color: #fff;
+  border-radius: 8px;
+  color: #333;
+  padding: 5px 10px 10px 10px;
+  margin-bottom: 30px;
+}
+
 
 // 答えを隠すcss
 .devide_answer_div {
   display: none;
+  font-size: 16px;
 }
 
 // devide部分
@@ -110,33 +119,78 @@ ul {
   padding: 30px 0;
 }
 
+.question_content {
+  font-size: 20px;
+}
+
+.image_div {
+  text-align: center;
+  margin: 20px 0;
+}
+.image_div img{
+  height: 180px;
+  border-radius: 8px;
+  box-shadow:5px 5px 10px;
+  border:1px solid #000;
+}
+
+.title_mondai {
+  text-align: center;
+  border-bottom: solid 1px #888;
+}
+
 .answer_confirm_btn{
   height: 60px;
   border-radius: 8px;
-  background-color: #fff;
+  background-color: #202f55;
   margin-top: 20px;
-  color: #202f55;
+  color: #fff;
   font-size: 16px;
   display: block;
   padding: 20px;
+  text-align: center;
 }
 
 .answer_confirm_btn:active {
   opacity: 0.7;
 }
 
+.mondai_kotae {
+  text-align: center;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  border-bottom: solid 1px #888;
+}
+
 .close_btn{
   height: 30px;
-  width: 60px;
   border-radius: 8px;
-  background-color: #fff;
+  background-color: #888;
   margin: 20px 0 10px 0;
-  color: #202f55;
+  color: #fff;
   font-size: 16px;
   display: block;
   padding: 5px;
+  text-align: center;
 }
 
 .close_btn:active {
   opacity: 0.7;
+}
+
+.modoru_btn {
+  height: 38px;
+  border-radius: 8px;
+  background-color: #fff;
+  margin: 20px 0 50px 0;
+  color: #202f55;
+  font-size: 16px;
+  display: block;
+  padding: 5px;
+  text-align: center;
+}
+
+.modoru_btn a {
+  color: #202f55;
 }

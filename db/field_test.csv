@@ -2,7 +2,7 @@ id,field_name,field_code,temporary
 1,運転者の心得,a,TRUE
 2,信号に従うこと,b,TRUE
 3,標識・表示,c,TRUE
-4,車が通行できるところ・できないところ,d,TRUE
+4,車が通行できる所・できない所,d,TRUE
 5,緊急自動車等,e,TRUE
 6,交差点や踏切の通行,f,TRUE
 7,安全な速度と車間距離,g,TRUE
