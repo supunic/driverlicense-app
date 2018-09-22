@@ -12,7 +12,7 @@ $(function(){
 
     var select_num = $('#select_num').val();
     var select_field = $('#select_field').val();
-    var select_questions = $('#select_questions').val();
+    var select_questions = $('.switch__input:checked').val();
 
     function random(array, num) {
       var a = array;
@@ -198,6 +198,25 @@ $(function(){
         var torf = "不正解"
         $('#resultModal').append('<div class="result_false">' + torf + '</div>');
       };
+      //
+      // if(samples[i].image){
+      //   var src = $('#resultModal').children('img').attr('src').replace('sec1-1.png', samples[gon.count].image);
+      //   $('#resultModal').children('img').attr('src', src);
+      //   $('#resultModal').children('img').fadeIn();
+      // }else{
+      //   $('#resultModal').children('img').hide();
+      // };
+
+      // if(samples[i].image){
+      //   $('#resultModal').append('<div class="image"><img src="/assets/sec1-1.png" alt="image"></div>');
+      //   var src = $('#resultModal').children('img').attr('src').replace('sec1-1.png', samples[gon.count].image);
+      //   $('#resultModal').children('img').attr('src', src);
+      //   $('#resultModal').children('img').fadeIn();
+      // }else{
+      //   $('#resultModal').children('img').hide();
+      // };
+
+
       $('#resultModal').append('<div class="result_question">' + samples[i].content + '</div>');
       if(samples[i].answer == true){
         var answer = "○"
@@ -332,12 +351,15 @@ $(function(){
       </select>
     </div>
     <div class="select_questions_div">
-      <h4 class="midashi">問題を選ぶ</h4>
+      <h4 class="midashi">間違えた問題のみ出題</h4>
       <% if user_signed_in? %>
-        <select id="select_questions">
-          <option value="all_questions">全ての問題から出題</option>
-          <option value="wrong_questions">間違えた問題から出題</option>
-        </select>
+        <div class="switch">
+          <label class="switch__label">
+            <input type="checkbox" value="wrong_questions" class="switch__input"/>
+            <span class="switch__content"></span>
+            <span class="switch__circle"></span>
+          </label>
+        </div>
       <% else %>
         <div class="announce_sign_up">
           <p>ログインしてないので選べません。<br>
@@ -369,5 +391,6 @@ $(function(){
       <p class="result_btn">結果を表示</p>
     </div>
     <div id="resultModal" class="result_modal">
+    </div>
   </div>
 </div>
