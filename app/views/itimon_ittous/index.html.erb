@@ -186,7 +186,7 @@ $(function(){
     };
     var percentageOfCorrectAnswers = true_num / value.length *100;
     $('#resultModal').prepend('<div class="page-header"><h1 class="kekka_modal">今回の結果</h1></div>');
-    $('#resultModal').append('<p class="seitouritu">' + value.length + '問中' + true_num + '問正解！' +  '（正答率：' + percentageOfCorrectAnswers.toFixed(1) + '%）</p>');
+    $('#resultModal').append('<p class="seitouritu">' + value.length + '問中' + true_num + '問正解！' +  '(正答率：' + percentageOfCorrectAnswers.toFixed(1) + '%)</p>');
     for (var i = 0;  i < value.length; i++) {
       var n = i + 1;
       var questionId = samples[i].id
