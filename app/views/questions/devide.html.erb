@@ -35,7 +35,7 @@ $(function(){
         <div id="devide_question_div_<%= index %>" class="devide_question_div">
           <h2 class="title_mondai">問題</h2>
           <% if question.image.present? %>
-            <div class="image_div"><img src="<%= asset_path question.image %>"</div>
+            <div class="image_div"><img src="<%= asset_path question.image %>"></div>
           <% end %>
           <p class="question_content"><%= question.content %></p>
         </div>
