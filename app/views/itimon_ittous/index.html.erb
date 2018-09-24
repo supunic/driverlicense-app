@@ -120,7 +120,8 @@ $(function(){
     });
 
     $('#mondai_num').html(num + '/' + samples.length);
-    $('#field').html('分野：' + gon.fields[samples[gon.count].field_id].field_name);
+    var samples_index = samples[gon.count].field_id - 1;
+    $('#field').html('分野：' + gon.fields[samples_index].field_name);
     if(samples[gon.count].image){
       var src = $('#image').children('img').attr('src').replace('sec1-1.png', samples[gon.count].image);
       $('#image').children('img').attr('src', src);
@@ -255,7 +256,8 @@ $(function(){
         $('.result_btn').show();
       };
       $('#mondai_num').html(num + '/' + samples.length);
-      $('#field').html('分野：' + gon.fields[samples[gon.count].field_id].field_name);
+      var samples_index = samples[gon.count].field_id - 1;
+      $('#field').html('分野：' + gon.fields[samples_index].field_name);
       // $('#question').html(samples[gon.count].image);
       // $('#image').children('img').attr('src', samples[gon.count].image);
       if(samples[gon.count].image){

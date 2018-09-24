@@ -13,22 +13,22 @@
   <div class="mypage1">
     <h2>学習進捗</h2>
     <div class="progress">
-      <div id ="answer_progress" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow=@aria_valuenow aria-valuemin="0" aria-valuemax="100">
-        <%= @answer_valuenow  %>%
+      <div id ="answer_progress" class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow=@aria_valuenow aria-valuemin="0" aria-valuemax="100">
+        <%= @answer_valuenow.round(1)  %>%
       </div>
     </div>
-    <span>あなたの進捗は<%= @answer_valuenow  %>%です。</span>
+    <span><%= current_user.name %>さんの進捗は<%= @answer_valuenow.round(1) %>%です。</span>
   </div>
 </div>
 <div class="mypage2_background">
   <div class="mypage2">
     <h2>正答率</h2>
     <div class="progress">
-      <div id="collect_answer_progress" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow=@aria_valuenow aria-valuemin="0" aria-valuemax="100">
-        <%= @collect_answer_valuenow  %>%
+      <div id="collect_answer_progress" class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow=@aria_valuenow aria-valuemin="0" aria-valuemax="100">
+        <%= @collect_answer_valuenow.round(1)  %>%
       </div>
     </div>
-    <span>あなたは全問題のうち、<%= @collect_answer_valuenow  %>%正解してます。</span>
+    <span><%= current_user.name %>さんは全問題のうち、<%= @collect_answer_valuenow.round(1) %>%正解してます。</span>
   </div>
 </div>
 <div class="mypage3_background">

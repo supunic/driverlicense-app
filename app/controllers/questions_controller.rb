@@ -7,7 +7,7 @@ class QuestionsController < ApplicationController
   end
 
   def devide
-    @devide_questions = Question.where(field_id: params[:id])
+    @devide_questions = Question.where(field_id: params[:id]).page(params[:page])
     gon.devide_questions = @devide_questions
   end
 end
