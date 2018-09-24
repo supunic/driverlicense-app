@@ -15,7 +15,7 @@
 
 .login_background {
   background-color: #202f55;
-  height: 350px;
+  height: 400px;
 }
 
 .login {
@@ -49,4 +49,31 @@
 .remember_me {
   color: #fff;
   margin-bottom: 20px;
+}
+
+
+.login_sign_up_btn{
+  height: 60px;
+  background-color: #fff;
+  border-radius: 8px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.login_sign_up_btn a {
+  color: #202f55;
+  font-size: 16px;
+  display: block;
+  padding: 20px;
+}
+
+.login_sign_up_btn:active {
+  opacity: 0.7;
+}
+
+.form_login_btn {
+  height: 60px;
+  background-color: #fff;
+  border-radius: 8px;
+  text-align: center;
 }

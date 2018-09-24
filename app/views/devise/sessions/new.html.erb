@@ -29,9 +29,10 @@
       <% end -%>
 
       <div class="actions">
-        <%= f.submit "ログイン" %>
+        <%= f.submit "ログイン" ,:class=>"form_login_btn col-xs-12" %>
       </div>
+      <p class="login_sign_up_btn col-xs-12"><%= link_to "マイページを作る", new_user_registration_path %></p>
     <% end %>
   </div>
 </div>
-<%= render "devise/shared/links" %>
+<!-- <%= render "devise/shared/links" %> -->

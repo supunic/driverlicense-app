@@ -341,6 +341,9 @@
 
 
 // 結果画面
+.kekka_modal {
+  text-align: left;
+}
 
 .result_n {
   font-size: 20px;
@@ -349,21 +352,18 @@
   // width: 80px;
   color: #fff;
   border-radius: 6px;
-  text-align: center;
 }
 
 .result_true {
   background-color: rgb(222, 63, 63);
   border-radius: 4px;
   color: #fff;
-  text-align: center;
 }
 
 .result_false {
   background-color: rgb(48, 89, 213);
   border-radius: 4px;
   color: #fff;
-  text-align: center;
 }
 
 .result_question {
@@ -372,6 +372,7 @@
   margin: 10px 0;
   padding: 5px;
   border-radius: 8px;
+  text-align: left;
 }
 
 .result_answer {
@@ -382,6 +383,7 @@
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   font-weight: bold;
+  text-align: left;
 }
 
 .result_explanation {
@@ -391,11 +393,13 @@
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   margin-bottom: 70px;
+  text-align: left;
 }
 
 .seitouritu {
   font-weight: bold;
   font-size: 20px;
+  text-align: left;
 }
 
 // 結果画面のボタン
@@ -431,7 +435,7 @@
 
 // オンオフボタン
 .switch__label {
-	width: 70px;
+	width: 60px;
 	position: relative;
 	display: inline-block;
 }
@@ -494,7 +498,7 @@ overflow: hidden;
 	        transition: all .5s;
 }
 .switch__input:checked ~ .switch__circle {
-	left: 41px;
+	left: 31px;
 }
 
 .switch__input:checked ~ .switch__content:after {
@@ -503,4 +507,16 @@ overflow: hidden;
 	left: 0;
 	width: 100%;
 	height: 100%;
+}
+
+.result_modal {
+  text-align: center;
+}
+
+.result_modal img {
+  height: 180px;
+  border-radius: 8px;
+  box-shadow:5px 5px 10px;
+  border:1px solid #000;
+  margin-top: 10px;
 }

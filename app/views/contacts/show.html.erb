@@ -1,19 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class="contact_complete">
+  <div class="page-header">
+    <h1>お問い合わせ確認</h1>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @contact.name %>
-</p>
+  <p>
+    <strong><%= @contact.name %> 様</strong>
+  </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @contact.email %>
-</p>
+  <p>いつもご利用いただき、ありがとうございます。<br>
+     以下の内容でお問い合わせを承りました。<br>
+     後程入力されたメールアドレス宛に、担当者よりご連絡差し上げますのでお待ち下さい。
+  </p>
+  <br><br>
+  <p>以下の内容が送信されました。</p>
+  <div class="div_contact">
+    <p>
+      <%= @contact.name %> 様
+    </p>
+    <p>メールアドレス：
+      <%= @contact.email %>
+    </p>
+    <br>
+    <p>お問い合わせ内容： <br>
+      <%= @contact.content %>
+    </p>
+  </div>
+  <p>サイト運営　supunic</p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @contact.content %>
-</p>
 
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
+
+  <div class="home_modoru_btn"><%= link_to 'ホームへ戻る', root_path %></div>
+</div>

@@ -23,10 +23,10 @@
 
   <div class="contact_content">
     <%= form.label :content %>
-    <p class="in_field"><%= form.text_area :content, id: :contact_content %></p>
+    <p class="in_field"><%= form.text_area :content, id: :contact_content, :size=>"45x5"%></p>
   </div>
 
   <div class="contact_actions">
-    <%= form.submit "内容確認画面へ" %>
+    <%= form.submit "送信",:class=>"form_login_btn col-xs-12" %>
   </div>
 <% end %>

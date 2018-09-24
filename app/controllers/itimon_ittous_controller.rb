@@ -20,7 +20,7 @@ class ItimonIttousController < ApplicationController
 
   def show
     if user_signed_in?
-      @quesitons = params[:questions]
+      @questions = params[:questions]
       results = params[:result]
       results.each {|key, value|
         answer_record = Torf.where(user_id: current_user.id).where(question_id: key)

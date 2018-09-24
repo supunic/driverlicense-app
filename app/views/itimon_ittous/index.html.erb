@@ -185,8 +185,8 @@ $(function(){
       };
     };
     var percentageOfCorrectAnswers = true_num / value.length *100;
+    $('#resultModal').prepend('<p class="seitouritu">' + value.length + '問中' + true_num + '問正解！' +  '(正答率：' + percentageOfCorrectAnswers.toFixed(1) + '%)</p>');
     $('#resultModal').prepend('<div class="page-header"><h1 class="kekka_modal">今回の結果</h1></div>');
-    $('#resultModal').append('<p class="seitouritu">' + value.length + '問中' + true_num + '問正解！' +  '(正答率：' + percentageOfCorrectAnswers.toFixed(1) + '%)</p>');
     for (var i = 0;  i < value.length; i++) {
       var n = i + 1;
       var questionId = samples[i].id
@@ -199,16 +199,14 @@ $(function(){
         $('#resultModal').append('<div class="result_false">' + torf + '</div>');
       };
       //
-      // if(samples[i].image){
-      //   var src = $('#resultModal').children('img').attr('src').replace('sec1-1.png', samples[gon.count].image);
-      //   $('#resultModal').children('img').attr('src', src);
-      //   $('#resultModal').children('img').fadeIn();
-      // }else{
-      //   $('#resultModal').children('img').hide();
-      // };
+      if(samples[i].image){
+        var src = $('#result_image').children('img').attr('src').replace('sec1-1.png', samples[i].image);
+        $('#result_image').children('img').attr('src', src).clone().appendTo('#resultModal').fadeIn();
+      }else{
+        $('#result_image').children('img').hide();
+      };
 
       // if(samples[i].image){
-      //   $('#resultModal').append('<div class="image"><img src="/assets/sec1-1.png" alt="image"></div>');
       //   var src = $('#resultModal').children('img').attr('src').replace('sec1-1.png', samples[gon.count].image);
       //   $('#resultModal').children('img').attr('src', src);
       //   $('#resultModal').children('img').fadeIn();
@@ -391,6 +389,7 @@ $(function(){
       <p class="result_btn">結果を表示</p>
     </div>
     <div id="resultModal" class="result_modal">
+      <div id="result_image" class="result_image"><img src="/assets/sec1-1.png" alt="image"></div>
     </div>
   </div>
 </div>
