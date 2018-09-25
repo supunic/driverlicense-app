@@ -1,17 +1,19 @@
 <div class="title_background">
+  <%= devise_error_messages! %>
   <div class="page-header">
-    <h2>マイページ作成</h2>
+    <h1>アカウント作成</h1>
   </div>
   <p>
-    自分のマイページが作成できます。<br>
-    ログインすると問題の進捗管理や間違った問題だけ復習できます。<br>
-    ニックネームとメールアドレス、パスワードの入力だけで簡単にログインできます。
+    アカウントを登録すると、自分のマイページを作成できます。
+    ログインすると問題の進捗管理や、間違った問題だけ復習できます。
+    ニックネームとメールアドレス、パスワードの入力だけで簡単にログインできます。<br>
+    <br>
+    ※メールアドレスは、ログイン情報としての利用目的以外では使用いたしません。
   </p>
 </div>
 <div class="registrations_background">
   <div class="registrations">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
 
       <div class="name">
         <%= f.label :name %>
@@ -37,7 +39,7 @@
       </div>
 
       <div class="actions">
-        <p class="in_field"><%= f.submit "マイページ作成",:class=>"form_login_btn col-xs-12"%></p>
+        <p class="in_field"><%= f.submit "作成",:class=>"form_login_btn col-xs-12"%></p>
       </div>
     <% end %>
   </div>

@@ -1,8 +1,5 @@
 class UsersController < ApplicationController
-  def index
-    @users = User.all
-  end
-
+  before_action :authenticate_user!, only: [:show]
   def show
     @user = User.find(params[:id])
     all_questions_count = Question.count
@@ -12,7 +9,5 @@ class UsersController < ApplicationController
     @collect_answer_valuenow = collect_answers_count.to_f / all_questions_count.to_f * 100
     gon.answer_valuenow = @answer_valuenow
     gon.collect_answer_valuenow = @collect_answer_valuenow
-
-    # binding.pry
   end
 end

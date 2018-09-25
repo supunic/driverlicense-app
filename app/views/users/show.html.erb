@@ -1,12 +1,20 @@
 <div class="mypage_top_background">
   <div class="mypage_top">
-    <div class="page-header">
-      <h1>マイページ<br>
-      <small><%= current_user.name %>さん、こんにちは！</small></h1>
-    </div>
-    <p>マイページでは学習進捗を確認できます。<br>
-       自分の学習進捗に合わせてカリキュラムを選んでください。
-    </p>
+    <% if current_user.try(:admin?) %>
+      <div class="page-header">
+        <h1>管理者マイページ</h1>
+      </div>
+      <p class="admin_btn col-xs-offset-1 col-xs-10 col-xs-offset-1"><%= link_to "管理画面", "/admin" %></p>
+    <% else %>
+      <div class="page-header">
+        <h1>マイページ<br>
+          <small><%= current_user.name %>さん、こんにちは！</small>
+        </h1>
+      </div>
+      <p>マイページでは学習進捗を確認できます。<br>
+         自分の学習進捗に合わせてカリキュラムを選んでください。
+      </p>
+    <% end %>
   </div>
 </div>
 <div class="mypage1_background">
@@ -36,6 +44,12 @@
     <h2>カリキュラム</h2>
     <p class="curriculum_btn col-xs-offset-1 col-xs-10 col-xs-offset-1"><%= link_to "一問一答に挑戦", itimon_ittous_index_path %></p>
     <p class="curriculum_btn col-xs-offset-1 col-xs-10 col-xs-offset-1"><%= link_to "分野別で問題を解く", questions_path %></p>
+  </div>
+</div>
+<div class="mypage4_background">
+  <div class="mypage4">
+    <p class="logout_btn col-xs-offset-1 col-xs-10 col-xs-offset-1"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
+    <p class="back_btn col-xs-offset-1 col-xs-10 col-xs-offset-1"><%= link_to "ホーム", root_path %></p>
   </div>
 </div>
 
