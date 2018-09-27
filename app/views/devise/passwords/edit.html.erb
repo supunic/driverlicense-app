@@ -17,12 +17,12 @@
         <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> 文字以上)</em><br />
         <% end %>
-        <p class="in_field"><%= f.password_field :password, autofocus: true, autocomplete: "new-password" %></p>
+        <p class="in_field"><%= f.password_field :password, autofocus: true, autocomplete: "new-password", :class=>"form_css col-xs-12" %></p>
       </div>
 
       <div class="password_confirmation">
         <%= f.label :password_confirmation, "新しいパスワード再入力" %><br />
-        <p class="in_field"><%= f.password_field :password_confirmation, autocomplete: "off" %></p>
+        <p class="in_field"><%= f.password_field :password_confirmation, autocomplete: "off", :class=>"form_css col-xs-12" %></p>
       </div>
 
       <div class="actions">
