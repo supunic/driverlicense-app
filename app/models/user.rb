@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :torfs, dependent: :destroy
   has_many :torf_questions, through: :torfs, source: :question
+
 end

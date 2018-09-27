@@ -74,7 +74,7 @@
   text-align: center;
   margin: 0 10px;
   padding: 30px 0;
-  height: 280px;
+  height: 380px;
 }
 
 .logout_btn{
@@ -114,6 +114,26 @@
 }
 
 .back_btn a:active{
+  opacity: 0.6;
+}
+
+.delete_btn{
+  height: 40px;
+  background-color: #fff;
+  border-radius: 8px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.delete_btn a {
+  color: #202f55;
+  font-size: 16px;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+}
+
+.delete_btn a:active{
   opacity: 0.6;
 }
 

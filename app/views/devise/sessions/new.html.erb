@@ -13,12 +13,12 @@
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="email">
         <%= f.label :email %><br />
-        <p class="in_field"><%= f.email_field :email, autofocus: true, autocomplete: "email" %></p>
+        <p class="in_field"><%= f.email_field :email, autofocus: true, autocomplete: "email",:class=>"form_css col-xs-12" %></p>
       </div>
 
       <div class="password">
         <%= f.label :password %><br />
-        <p class="in_field"><%= f.password_field :password, autocomplete: "current-password" %></p>
+        <p class="in_field"><%= f.password_field :password, autocomplete: "current-password",:class=>"form_css col-xs-12" %></p>
       </div>
 
       <% if devise_mapping.rememberable? -%>
@@ -31,8 +31,8 @@
       <div class="actions">
         <%= f.submit "ログイン" ,:class=>"form_login_btn col-xs-12" %>
       </div>
-      <p class="login_sign_up_btn col-xs-12"><%= link_to "アカウント作成", new_user_registration_path %></p>
     <% end %>
   </div>
+  <p class="new_account"><%= link_to "▶︎ アカウント作成はこちら", new_user_registration_path %></p>
   <p class="forget_pass"><%= link_to "▶︎ パスワードを忘れた方はこちら", new_user_password_path %></p>
 </div>

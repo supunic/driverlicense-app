@@ -6,17 +6,20 @@
      ランダム一問一答機能では、問題数・分野別を自分で選択し空いた時間に気軽に対策が行えます。
      ログイン機能を使えば学習進捗を管理し、間違えた問題だけ集中して学習に取り組めます。
   </p>
-  <p class="question_btn_top col-xs-12 col-sm-5"><%= link_to "さっそく問題を解いてみる！", itimon_ittous_index_path %></p>
+  <% if user_signed_in? %>
+    <p class="question_btn col-xs-12 col-sm-5"><%= link_to "一問一答", itimon_ittous_index_path %></p>
+  <% else %>
+    <p class="question_btn_top col-xs-12 col-sm-5"><%= link_to "さっそく問題を解いてみる！", itimon_ittous_index_path %></p>
+  <% end %>
 </div>
 <div class="home2">
   <p class="question_btn col-xs-12"><%= link_to "問題一覧", questions_path %></p>
   <% if user_signed_in? %>
-    <p class="login_btn col-xs-12"><%= link_to "マイページ", user_path(current_user.id) %></p>
+    <p class="mypage_btn col-xs-12"><%= link_to "マイページ", user_path(current_user.id) %></p>
   <% else %>
     <p class="login_btn col-xs-12"><%= link_to "ログイン", new_user_session_path %></p>
   <% end %>
   <p class="usage_btn col-xs-12"><%= link_to "使い方",  '#sec0' %></p>
-  <p class="mypage_btn col-xs-12"><%= link_to "一問一答", itimon_ittous_index_path %></p>
 </div>
 <div id="sec0" class="home3_background">
   <div class="home3">

@@ -1,5 +1,6 @@
 <div class="title_background">
   <%= devise_error_messages! %>
+  <%= notice %>
   <div class="page-header">
     <h1>アカウント作成</h1>
   </div>
@@ -8,7 +9,9 @@
     ログインすると問題の進捗管理や、間違った問題だけ復習できます。
     ニックネームとメールアドレス、パスワードの入力だけで簡単にログインできます。<br>
     <br>
-    ※メールアドレスは、ログイン情報としての利用目的以外では使用いたしません。
+    ※メールアドレスは、ログイン情報としての利用目的以外では使用いたしません。<br>
+    <br>
+    ※性別・年齢はサービス向上のためのアンケートになります。ご回答いただけると幸いです。
   </p>
 </div>
 <div class="registrations_background">
@@ -16,26 +19,38 @@
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
       <div class="name">
-        <%= f.label :name %>
-        <p class="in_field"><%= f.text_field :name %></p>
+        <%= f.label "ニックネーム" %>
+        <p class="in_field"><%= f.text_field :name, autofocus: true, :class=>"form_css col-xs-12" %></p>
       </div>
 
       <div class="email">
         <%= f.label :email %>
-        <p class="in_field"><%= f.email_field :email, autofocus: true, autocomplete: "email" %></p>
+        <p class="in_field"><%= f.email_field :email, autocomplete: "email",:class=>"form_css col-xs-12" %></p>
       </div>
+
+      <div class="sex">
+        <%= f.label "性別（任意）" %><br>
+        <label class="sexradio_span"><%= f.radio_button :sex, "男", :class=>"sexradio" %>男</label>
+        <label class="sexradio_span"><%= f.radio_button :sex, "女", :class=>"sexradio" %>女</label>
+      </div>
+
+      <div class="age">
+        <%= f.label "年齢（任意）" %>
+        <p class="in_field"><%= f.select :age, [["10代", "10代"], ["20代", "20代"], ["30代", "30代"],  ["40代", "40代"], ["50代以上", "50代以上"]], :prompt => "選択してください" %></p>
+      </div>
+
 
       <div class="password">
         <%= f.label :password %>
         <% if @minimum_password_length %>
         (<%= @minimum_password_length %> 文字以上)
         <% end %>
-        <p class="in_field"><%= f.password_field :password, autocomplete: "new-password" %></p>
+        <p class="in_field"><%= f.password_field :password, autocomplete: "new-password",:class=>"form_css col-xs-12" %></p>
       </div>
 
       <div class="password_confirmation">
         <%= f.label :password_confirmation %>
-        <p class="in_field"><%= f.password_field :password_confirmation, autocomplete: "new-password" %></p>
+        <p class="in_field"><%= f.password_field :password_confirmation, autocomplete: "new-password",:class=>"form_css col-xs-12" %></p>
       </div>
 
       <div class="actions">

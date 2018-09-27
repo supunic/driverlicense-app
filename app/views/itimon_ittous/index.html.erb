@@ -87,6 +87,78 @@ $(function(){
 });
 
 $(function(){
+  $('.hazimeru_btn').click(function(){
+    $(this).fadeOut();
+      modalResize();
+      var num = gon.count + 1;
+      if (num === samples.length) {
+        $('.next_btn').hide();
+        $('.result_btn').show();
+      };
+      $('#mondai_num').html(num + '/' + samples.length);
+      var samples_index = samples[gon.count].field_id - 1;
+      $('#field').html('分野：' + gon.fields[samples_index].field_name);
+      // $('#question').html(samples[gon.count].image);
+      // $('#image').children('img').attr('src', samples[gon.count].image);
+      if(samples[gon.count].image){
+        var src = $('#image').children('img').attr('src').replace('sec1-1.png', samples[gon.count].image);
+        $('#image').children('img').attr('src', src);
+        $('#image').children('img').fadeIn();
+      }else{
+        $('#image').children('img').hide();
+      };
+      // debugger
+      // $('#image').children('img').attr('src', src);
+      $('#question').html(samples[gon.count].content);
+      $('#questionModal').fadeIn();
+      $(window).on('resize', function(){
+        modalResize();
+      });
+      function modalResize(){
+          var w = $(window).width();
+          var h = $(window).height();
+          var x = (w - $('#questionModal').outerWidth(true)) / 2;
+          var y = (h - $('#questionModal').outerHeight(true)) / 4;
+          $('#questionModal').css({'left': x + 'px','top': y + 'px'});
+      };
+  });
+});
+
+$(function(){
+  $('.kaitou_btn').click(function(){
+    $('body').append('<div class="answer_modal_overlay"></div>');
+    $('.answer_modal_overlay').fadeIn();
+    var user_answer = Boolean($(this).attr('value'));
+    var collect_answer = samples[gon.count].answer;
+    if (user_answer === collect_answer){
+      $('#answerModal').prepend('<div class="seikai">正解!</div>')
+      gon.result[samples[gon.count].id] = true
+    }else{
+      $('#answerModal').prepend('<div class="huseikai">不正解</div>')
+      gon.result[samples[gon.count].id] = false
+    };
+    modalResize();
+    if (samples[gon.count].answer === true){
+      $('#answer').html('答え：○')
+    }else{
+      $('#answer').html('答え：×')
+    };
+    $('#explanation').html(samples[gon.count].explanation);
+    $('#answerModal').fadeIn();
+    $(window).on('resize', function(){
+        modalResize();
+    });
+    function modalResize(){
+        var w = $(window).width();
+        var h = $(window).height();
+        var x = (w - $('#answerModal').outerWidth(true)) / 2;
+        var y = (h - $('#answerModal').outerHeight(true)) / 4;
+        $('#answerModal').css({'left': x + 'px','top': y + 'px'});
+    };
+  });
+});
+
+$(function(){
   $('.next_btn').click(function(){
     $('body').append('<div class="question_modal_overlay"></div>');
     $('body').append('<div class="answer_modal_overlay"></div>');
@@ -246,77 +318,8 @@ $(function(){
   });
 });
 
-$(function(){
-  $('.hazimeru_btn').click(function(){
-    $(this).fadeOut();
-      modalResize();
-      var num = gon.count + 1;
-      if (num === samples.length) {
-        $('.next_btn').hide();
-        $('.result_btn').show();
-      };
-      $('#mondai_num').html(num + '/' + samples.length);
-      var samples_index = samples[gon.count].field_id - 1;
-      $('#field').html('分野：' + gon.fields[samples_index].field_name);
-      // $('#question').html(samples[gon.count].image);
-      // $('#image').children('img').attr('src', samples[gon.count].image);
-      if(samples[gon.count].image){
-        var src = $('#image').children('img').attr('src').replace('sec1-1.png', samples[gon.count].image);
-        $('#image').children('img').attr('src', src);
-        $('#image').children('img').fadeIn();
-      }else{
-        $('#image').children('img').hide();
-      };
-      // debugger
-      // $('#image').children('img').attr('src', src);
-      $('#question').html(samples[gon.count].content);
-      $('#questionModal').fadeIn();
-      $(window).on('resize', function(){
-        modalResize();
-      });
-      function modalResize(){
-          var w = $(window).width();
-          var h = $(window).height();
-          var x = (w - $('#questionModal').outerWidth(true)) / 2;
-          var y = (h - $('#questionModal').outerHeight(true)) / 4;
-          $('#questionModal').css({'left': x + 'px','top': y + 'px'});
-      };
-  });
-});
 
-$(function(){
-  $('.kaitou_btn').click(function(){
-    $('body').append('<div class="answer_modal_overlay"></div>');
-    $('.answer_modal_overlay').fadeIn();
-    var user_answer = Boolean($(this).attr('value'));
-    var collect_answer = samples[gon.count].answer;
-    if (user_answer === collect_answer){
-      $('#answerModal').prepend('<div class="seikai">正解!</div>')
-      gon.result[samples[gon.count].id] = true
-    }else{
-      $('#answerModal').prepend('<div class="huseikai">不正解</div>')
-      gon.result[samples[gon.count].id] = false
-    };
-    modalResize();
-    if (samples[gon.count].answer === true){
-      $('#answer').html('答え：○')
-    }else{
-      $('#answer').html('答え：×')
-    };
-    $('#explanation').html(samples[gon.count].explanation);
-    $('#answerModal').fadeIn();
-    $(window).on('resize', function(){
-        modalResize();
-    });
-    function modalResize(){
-        var w = $(window).width();
-        var h = $(window).height();
-        var x = (w - $('#answerModal').outerWidth(true)) / 2;
-        var y = (h - $('#answerModal').outerHeight(true)) / 4;
-        $('#answerModal').css({'left': x + 'px','top': y + 'px'});
-    };
-  });
-});
+
 </script>
 
 

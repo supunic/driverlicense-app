@@ -4,7 +4,7 @@
 
 .contact2_background {
   background-color: #202f55;
-  height: 450px;
+  height: 590px;
   text-align: center;
   padding: 0 20px;
 }
@@ -59,22 +59,26 @@
   margin: 10px 0;
 }
 
-input[type="text"] {
-        width: 300px;
-        height: 30px;
-    }
 
-input[type="password"] {
-        width: 300px;
-        height: 30px;
-    }
+.form_css {
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
 
-input[type="email"] {
-        width: 300px;
-        height: 30px;
-    }
+.form_textarea_css {
+  border-radius: 6px;
+  margin-bottom: 20px;
+  height: 200px;
+}
 
-input[type="text_area"] {
-        width: 300px;
-        height: 30px;
-    }
+.sex {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.age {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+// 性別ラジオボタン
