@@ -12,7 +12,9 @@
         </h1>
       </div>
       <p>マイページでは学習進捗を確認できます。<br>
-         自分の学習進捗に合わせてカリキュラムを選んでください。
+         自分の学習進捗に合わせてカリキュラムを選んでください。<br>
+         <br>
+         ※問題一覧の「仮免学科問題1〜3」と「卒業前効果測定1〜2」を除いた進捗率、及び正答率になります。
       </p>
     <% end %>
   </div>
@@ -22,7 +24,7 @@
     <h2>学習進捗</h2>
     <div class="progress">
       <div id ="answer_progress" class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow=@aria_valuenow aria-valuemin="0" aria-valuemax="100">
-        <%= @answer_valuenow.round(1)  %>%
+        <%= @answer_valuenow.round(1) %>%
       </div>
     </div>
     <span><%= current_user.name %>さんの進捗は<%= @answer_valuenow.round(1) %>%です。</span>
@@ -36,7 +38,7 @@
         <%= @collect_answer_valuenow.round(1)  %>%
       </div>
     </div>
-    <span><%= current_user.name %>さんは全問題のうち、<%= @collect_answer_valuenow.round(1) %>%正解してます。</span>
+    <span><%= current_user.name %>さんの正答率は<%= @collect_answer_valuenow.round(1) %>%です。</span>
   </div>
 </div>
 <div class="mypage3_background">

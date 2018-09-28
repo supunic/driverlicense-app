@@ -2,14 +2,6 @@
 $(function(){
   $('.kettei_btn').click(function(){
     gon.count = 0;
-    $(this).hide();
-    $('.setsumei').hide();
-    $('.select_num_div').hide();
-    $('.select_field_div').hide();
-    $('.select_questions_div').hide();
-
-    $('.hazimeru_btn').fadeIn();
-
     var select_num = $('#select_num').val();
     var select_field = $('#select_field').val();
     var select_questions = $('.switch__input:checked').val();
@@ -82,7 +74,27 @@ $(function(){
     var userSelectQuestions = [];
     selectdFieldQuestions();
     onlyWrongQuestions();
-    samples = random(userSelectQuestions, select_num);
+    debugger
+    if(userSelectQuestions.length == 0){
+      $('.itimon_ittou1').prepend('<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">close</span></button>選択した範囲で出題できる問題がありません</div>')
+    }else if(select_num > userSelectQuestions.length){
+      samples = random(userSelectQuestions, userSelectQuestions.length);
+      $(this).hide();
+      $('.setsumei').hide();
+      $('.select_num_div').hide();
+      $('.select_field_div').hide();
+      $('.select_questions_div').hide();
+      $('.hazimeru_btn').fadeIn();
+    }else{
+      samples = random(userSelectQuestions, select_num);
+      $(this).hide();
+      $('.setsumei').hide();
+      $('.select_num_div').hide();
+      $('.select_field_div').hide();
+      $('.select_questions_div').hide();
+      $('.hazimeru_btn').fadeIn();
+    };
+    debugger
   });
 });
 
@@ -96,8 +108,12 @@ $(function(){
         $('.result_btn').show();
       };
       $('#mondai_num').html(num + '/' + samples.length);
-      var samples_index = samples[gon.count].field_id - 1;
-      $('#field').html('分野：' + gon.fields[samples_index].field_name);
+      for(var i = 0; i < gon.fields.length; i++){
+	      if(samples[gon.count].field_id == gon.fields[i].id){
+		      var fieldName = gon.fields[i].field_name
+	      };
+      };
+      $('#field').html('分野：' + fieldName);
       // $('#question').html(samples[gon.count].image);
       // $('#image').children('img').attr('src', samples[gon.count].image);
       if(samples[gon.count].image){
@@ -192,8 +208,12 @@ $(function(){
     });
 
     $('#mondai_num').html(num + '/' + samples.length);
-    var samples_index = samples[gon.count].field_id - 1;
-    $('#field').html('分野：' + gon.fields[samples_index].field_name);
+    for(var i = 0; i < gon.fields.length; i++){
+      if(samples[gon.count].field_id == gon.fields[i].id){
+        var fieldName = gon.fields[i].field_name
+      };
+    };
+    $('#field').html('分野：' + fieldName);
     if(samples[gon.count].image){
       var src = $('#image').children('img').attr('src').replace('sec1-1.png', samples[gon.count].image);
       $('#image').children('img').attr('src', src);

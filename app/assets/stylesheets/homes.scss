@@ -3,6 +3,8 @@
 html {
   position: relative;
   min-height: 100%;
+  margin: 0 auto;
+  max-width: 980px;
 }
 
 body {
@@ -39,6 +41,13 @@ h1 {
 }
 
 // ホーム１関連
+.login_sign {
+  margin: 0 10px 0 0;
+  padding: 0px;
+  text-align: right;
+  color: #202f55;
+}
+
 .alert.alert-danger.alert-dismissible {
   margin: 0 10px;
 }

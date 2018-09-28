@@ -39,6 +39,9 @@
         </div>
       </div>
     </nav>
+    <% if user_signed_in? %>
+      <p class="login_sign">ログイン：<%= current_user.name %></p>
+    <% end %>
     <% if notice %>
         <div class="alert alert-info alert-dismissible" role="alert">
           <button type="button" class="close" data-dismiss="alert">

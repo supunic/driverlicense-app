@@ -1,10 +1,10 @@
 class ItimonIttousController < ApplicationController
   protect_from_forgery except: :show
   def index
-    @questions = Question.all
+    @questions = Question.where(field_id: 1..16) + Question.where(field_id: 20..34)
     gon.questions = @questions
 
-    @fields = Field.all
+    @fields = Field.where(id: 1..16) + Field.where(id: 20..34)
     gon.fields = @fields
 
     @count = 0

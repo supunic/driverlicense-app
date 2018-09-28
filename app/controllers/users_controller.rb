@@ -2,12 +2,13 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:show, :destroy]
 
   def index
-    redirect_to root_path
+    redirect_to "/users/sign_up"
   end
 
   def show
     @user = User.find(params[:id])
-    all_questions_count = Question.count
+    questions = Question.where(field_id: 1..16) + Question.where(field_id: 20..34)
+    all_questions_count = questions.count
     answers_count = Torf.where(user_id: current_user.id).count
     @answer_valuenow = answers_count.to_f / all_questions_count.to_f * 100
     collect_answers_count = Torf.where(user_id: current_user.id).where(answer_log: true).count
