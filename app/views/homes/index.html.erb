@@ -7,9 +7,9 @@
      ログイン機能を使えば学習進捗を管理し、間違えた問題だけ集中して学習に取り組めます。
   </p>
   <% if user_signed_in? %>
-    <p class="question_btn col-xs-12 col-sm-5"><%= link_to "一問一答", itimon_ittous_index_path %></p>
+    <p class="question_btn col-xs-12"><%= link_to "一問一答", itimon_ittous_index_path %></p>
   <% else %>
-    <p class="question_btn_top col-xs-12 col-sm-5"><%= link_to "さっそく問題を解いてみる！", itimon_ittous_index_path %></p>
+    <p class="question_btn_top col-xs-12"><%= link_to "さっそく問題を解いてみる！", itimon_ittous_index_path %></p>
   <% end %>
 </div>
 <div class="home2">
