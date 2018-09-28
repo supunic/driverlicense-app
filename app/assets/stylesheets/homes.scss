@@ -45,7 +45,13 @@ h1 {
   margin: 0 10px 0 0;
   padding: 0px;
   text-align: right;
-  color: #202f55;
+}
+a {
+  color: #fff;
+}
+
+a:hover {
+  color: #fff;
 }
 
 .alert.alert-danger.alert-dismissible {

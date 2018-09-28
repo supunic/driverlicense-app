@@ -40,7 +40,7 @@
       </div>
     </nav>
     <% if user_signed_in? %>
-      <p class="login_sign">ログイン：<%= current_user.name %></p>
+      <div class="login_sign"><span class="label label-success"><%= link_to "　ログイン：#{current_user.name}　", user_path(current_user.id) %></span></div>
     <% end %>
     <% if notice %>
         <div class="alert alert-info alert-dismissible" role="alert">
