@@ -1,6 +1,7 @@
 <script>
 $(function(){
   $('.kettei_btn').click(function(){
+    $("html,body").animate({scrollTop:0},"300");
     gon.count = 0;
     var select_num = $('#select_num').val();
     var select_field = $('#select_field').val();
@@ -74,7 +75,6 @@ $(function(){
     var userSelectQuestions = [];
     selectdFieldQuestions();
     onlyWrongQuestions();
-    debugger
     if(userSelectQuestions.length == 0){
       $('.itimon_ittou1').prepend('<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">close</span></button>選択した範囲で出題できる問題がありません</div>')
     }else if(select_num > userSelectQuestions.length){
@@ -94,7 +94,6 @@ $(function(){
       $('.select_questions_div').hide();
       $('.hazimeru_btn').fadeIn();
     };
-    debugger
   });
 });
 
@@ -388,7 +387,7 @@ $(function(){
           <p>ログインしてないので選べません。<br>
              ログインすると間違った問題だけ選択できます。
           </p>
-          <p class="sigh_up_btn"><%= link_to "ログインする", new_user_session_path %></p>
+          <p class="login_path"><%= link_to "▶︎ ログインする", new_user_session_path %></p>
         </div>
       <% end %>
     </div>

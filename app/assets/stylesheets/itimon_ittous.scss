@@ -7,6 +7,7 @@
 .itimon_ittou2_background {
   background-color: #202f55;
   min-height: 520px;
+  text-align: center;
 }
 
 .itimon_ittou2 {
@@ -317,7 +318,7 @@
 .announce_sign_up {
   background-color: #fff;
   border: dotted 1px #333;
-  border-radius: 8px;
+  border-radius: 30px;
   padding: 10px;
 }
 
@@ -519,4 +520,17 @@ overflow: hidden;
   box-shadow:5px 5px 10px;
   border:1px solid #000;
   margin-top: 10px;
+}
+
+.login_path {
+  text-align: center;
+  margin: 15px 0 5px 0;
+}
+
+.login_path a {
+  color: #202f55;
+}
+
+.login_path a:active {
+  color: orange;
 }
