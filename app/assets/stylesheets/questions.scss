@@ -32,7 +32,7 @@ ul {
 
 .questions_index_2 {
   padding: 1px 10px 0 10px;
-  height: 1670px;
+  height: 1520px;
   color: #fff;
 }
 
@@ -55,32 +55,54 @@ ul {
   opacity: 0.7;
 }
 
+.questions_index_2_5_background {
+  background-color: #fff;
+}
 
+.questions_index_2_5 {
+  padding: 1px 10px 0 10px;
+  height: 330px;
+  color: #202f55;
+}
 
+.temporary_test_btn{
+  height: 60px;
+  border-radius: 8px;
+  background-color: #202f55;
+  margin: 10px 0;
+  text-align: center;
+}
 
+.temporary_test_btn a {
+  color: #fff;
+  font-size: 16px;
+  display: block;
+  padding: 20px;
+}
 
 // 本試験部分
 
 .questions_index_3_background {
- background-color: #fff;
+ background-color: #202f55;
 }
 
 .questions_index_3 {
-  padding: 0 10px;
-  height: 1530px;
+  padding: 1px 10px;
+  height: 1450px;
+  color: #fff;
 }
 
 .main_btn{
   height: 60px;
   border-radius: 8px;
-  background-color: #202f55;
+  background-color: #fff;
   margin-top: 20px;
   text-align: center;
 }
 
 
 .main_btn a {
-  color: #fff;
+  color: #202f55;
   font-size: 16px;
   display: block;
   padding: 20px;
@@ -89,6 +111,33 @@ ul {
 .main_btn:active {
   opacity: 0.7;
 }
+
+.questions_index_3_5_background {
+  background-color: #fff;
+}
+
+.questions_index_3_5 {
+  padding: 1px 10px 0 10px;
+  height: 290px;
+  color: #202f55;
+}
+
+.main_test_btn{
+  height: 60px;
+  border-radius: 8px;
+  background-color: #202f55;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.main_test_btn a {
+  color: #fff;
+  font-size: 16px;
+  display: block;
+  padding: 20px;
+}
+
+
 
 .devide_question_background {
   background-color: #fff;
@@ -130,11 +179,11 @@ ul {
   margin: 20px 0;
 }
 .image_div img{
-  height: 180px;
+  height: 120px;
   border-radius: 8px;
   box-shadow:5px 5px 10px;
   border:1px solid #000;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .title_mondai {

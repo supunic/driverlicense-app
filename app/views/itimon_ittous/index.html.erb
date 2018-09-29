@@ -124,7 +124,6 @@ $(function(){
       }else{
         $('#image').children('img').hide();
       };
-      // debugger
       // $('#image').children('img').attr('src', src);
       $('#question').html(samples[gon.count].content);
       $('#questionModal').fadeIn();
@@ -193,7 +192,8 @@ $(function(){
     $('.huseikai').hide(function(){
       $('.huseikai').remove();
     });
-
+    var src = $('#image').children('img').attr('src').replace(samples[gon.count].image, 'sec1-1.png');
+    $('#image').children('img').attr('src', src);
     gon.count += 1;
     var num = gon.count + 1;
 
@@ -296,10 +296,10 @@ $(function(){
       if(samples[i].image){
         var src = $('#result_image').children('img').attr('src').replace('sec1-1.png', samples[i].image);
         $('#result_image').children('img').attr('src', src).clone().appendTo('#resultModal').fadeIn();
+        $('#result_image').children('img').attr('src', "/assets/sec1-1.png")
       }else{
         $('#result_image').children('img').hide();
       };
-
       // if(samples[i].image){
       //   var src = $('#resultModal').children('img').attr('src').replace('sec1-1.png', samples[gon.count].image);
       //   $('#resultModal').children('img').attr('src', src);
@@ -318,6 +318,7 @@ $(function(){
       $('#resultModal').append('<div class="result_answer">答え：' + answer + '</div>');
       $('#resultModal').append('<div class="result_explanation">' + samples[i].explanation + '</div>')
     };
+    $('#result_image').children('img').hide();
     gon.count = 0;
     gon.result = {};
     $('#resultModal').append('<div class="kakunin_btn"><a href="/itimon_ittous/index" >もう一度挑戦</a></div>');

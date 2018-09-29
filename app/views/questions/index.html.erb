@@ -9,20 +9,42 @@
 <div class="questions_index_2_background">
   <div class="questions_index_2">
     <div class="page-header">
-      <h2>仮免許試験　出題範囲</h2>
+      <h2>第一段階 問題分野<br><small>仮免許出題範囲</small></h2>
     </div>
+    <p>仮免許試験項目一覧です。
+       第一段階は信号や標識などの基本的な交通ルールや実際に車道で運転するために必要な知識を学びます。
+     </p>
     <% @temporary.each do |temporary| %>
         <span class="temporary_btn col-xs-12"><%= link_to temporary.field_name, devide_question_path(temporary.id) %></span>
+    <% end %>
+  </div>
+</div>
+<div class="questions_index_2_5_background">
+  <div class="questions_index_2_5">
+    <h3>仮免許 演習問題</h3>
+    <% @temporary_test.each do |temporary| %>
+        <span class="temporary_test_btn col-xs-12"><%= link_to temporary.field_name, devide_question_path(temporary.id) %></span>
     <% end %>
   </div>
 </div>
 <div class="questions_index_3_background">
   <div class="questions_index_3">
     <div class="page-header">
-      <h2>本試験　出題範囲</h2>
+      <h2>第二段階 問題分野<br><small>本試験出題範囲</small></h2>
     </div>
+    <p>本試験での出題分野一覧です。
+       本試験は第二段階と第一段階の出題分野を合わせた中から出題されます。どちらも必ず学習してください。
+     </p>
     <% @main.each do |main| %>
         <span class="main_btn col-xs-12"><%= link_to main.field_name, devide_question_path(main.id) %></span>
     <% end %>
   </div>
 <div>
+<div class="questions_index_3_5_background">
+  <div class="questions_index_3_5">
+    <h3>本試験 効果測定</h3>
+    <% @main_test.each do |main| %>
+        <span class="main_test_btn col-xs-12"><%= link_to main.field_name, devide_question_path(main.id) %></span>
+    <% end %>
+  </div>
+</div>

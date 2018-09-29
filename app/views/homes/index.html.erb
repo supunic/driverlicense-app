@@ -6,6 +6,17 @@
      ランダム一問一答機能では、問題数・分野別を自分で選択し空いた時間に気軽に対策が行えます。
      ログイン機能を使えば学習進捗を管理し、間違えた問題だけ集中して学習に取り組めます。
   </p>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- menkyo_app_adsense -->
+  <!-- <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-6929540284827971"
+       data-ad-slot="5337655340"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script> -->
   <% if user_signed_in? %>
     <p class="question_btn col-xs-12"><%= link_to "一問一答", itimon_ittous_index_path %></p>
   <% else %>
@@ -68,12 +79,8 @@
   </div>
 </div>
 <div  class="home7">
-  <p class="bottom_nav col-xs-12"><%= link_to "ページトップへ", "#" %></p>
-  <p class="bottom_nav col-xs-6"><%= link_to "利用規約", toss_index_path %></p>
-  <p class="bottom_nav col-xs-6"><%= link_to "問題一覧", questions_path %></p>
-  <p class="bottom_nav col-xs-6"><%= link_to "使い方", "#sec0" %></p>
-  <p class="bottom_nav col-xs-6"><%= link_to "お問い合わせ", new_contact_path %></p>
-  <p class="bottom_nav col-xs-12"><%= link_to "アカウント作成", new_user_registration_path %></p>
+  <p class="bottom_nav col-xs-12"><%= link_to "お問い合わせ", new_contact_path %></p>
+    <p class="bottom_nav col-xs-12"><%= link_to "利用規約", toss_index_path %></p>
 </div>
 
 <script>

@@ -51,8 +51,7 @@
 <div class="mypage4_background">
   <div class="mypage4">
     <p class="logout_btn col-xs-offset-1 col-xs-10 col-xs-offset-1"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
-    <p class="back_btn col-xs-offset-1 col-xs-10 col-xs-offset-1"><%= link_to "ホーム", root_path %></p>
-    <p class="delete_btn col-xs-offset-1 col-xs-10 col-xs-offset-1"><%= link_to "アカウント削除", user_path(current_user.id), method: :delete, data: { confirm: 'アカウントを削除します。よろしいですか？' } %></p>
+    <p class="delete_btn col-xs-offset-1 col-xs-10 col-xs-offset-1"><%= link_to "アカウント削除", user_path(current_user.id), method: :delete, data: { confirm: 'アカウントを削除します。OKを押した時点で削除されますが、よろしいですか？'} %></p>
   </div>
 </div>
 
