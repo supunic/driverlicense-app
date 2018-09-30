@@ -9,3 +9,15 @@
   margin: 0 10px 120px 10px;
   // padding: 30px 0;
 }
+
+.bottom_nav {
+  border-radius: 8px;
+  border: solid 1px #333;
+  height: 38px;
+}
+
+.bottom_nav a {
+  color: #333;
+  display: block;
+  padding: 8px;
+}
