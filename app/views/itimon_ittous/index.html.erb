@@ -118,7 +118,7 @@ $(function(){
       // $('#question').html(samples[gon.count].image);
       // $('#image').children('img').attr('src', samples[gon.count].image);
       if(samples[gon.count].image){
-        var src = $('#image').children('img').attr('src').replace('sec1-1.png', samples[gon.count].image);
+        var src = $('#image').children('img').attr('src').replace('hello.png', samples[gon.count].image);
         $('#image').children('img').attr('src', src);
         $('#image').children('img').fadeIn();
       }else{
@@ -192,7 +192,7 @@ $(function(){
     $('.huseikai').hide(function(){
       $('.huseikai').remove();
     });
-    var src = $('#image').children('img').attr('src').replace(samples[gon.count].image, 'sec1-1.png');
+    var src = $('#image').children('img').attr('src').replace(samples[gon.count].image, 'hello.png');
     $('#image').children('img').attr('src', src);
     gon.count += 1;
     var num = gon.count + 1;
@@ -216,7 +216,7 @@ $(function(){
     };
     $('#field').html('分野：' + fieldName);
     if(samples[gon.count].image){
-      var src = $('#image').children('img').attr('src').replace('sec1-1.png', samples[gon.count].image);
+      var src = $('#image').children('img').attr('src').replace('hello.png', samples[gon.count].image);
       $('#image').children('img').attr('src', src);
       $('#image').children('img').fadeIn();
     }else{
@@ -294,14 +294,14 @@ $(function(){
       };
       //
       if(samples[i].image){
-        var src = $('#result_image').children('img').attr('src').replace('sec1-1.png', samples[i].image);
+        var src = $('#result_image').children('img').attr('src').replace('hello.png', samples[i].image);
         $('#result_image').children('img').attr('src', src).clone().appendTo('#resultModal').fadeIn();
-        $('#result_image').children('img').attr('src', "/assets/sec1-1.png")
+        $('#result_image').children('img').attr('src', "/assets/hello.png")
       }else{
         $('#result_image').children('img').hide();
       };
       // if(samples[i].image){
-      //   var src = $('#resultModal').children('img').attr('src').replace('sec1-1.png', samples[gon.count].image);
+      //   var src = $('#resultModal').children('img').attr('src').replace('hello.png', samples[gon.count].image);
       //   $('#resultModal').children('img').attr('src', src);
       //   $('#resultModal').children('img').fadeIn();
       // }else{
@@ -401,7 +401,7 @@ $(function(){
       <p id="mondai_num" class="mondai_num"></p>
       <ul class="tab">
         <li id="field" class="field"></li>
-        <li id="image" class="image"><img src="/assets/sec1-1.png" alt="image"></li>
+        <li id="image" class="image"><img src="/assets/hello.png" alt="image"></li>
         <li id="question" class="question"></li>
         <li class="true col-xs-5"><a data-target="#answerModal" class="kaitou_btn" value="true">◯</a></li>
         <li class="false col-xs-offset-2 col-xs-5"><a data-target="#answerModal" class="kaitou_btn" value="">×</a></li>
@@ -416,7 +416,7 @@ $(function(){
       <p class="result_btn">結果を表示</p>
     </div>
     <div id="resultModal" class="result_modal">
-      <div id="result_image" class="result_image"><img src="/assets/sec1-1.png" alt="image"></div>
+      <div id="result_image" class="result_image"><img src="/assets/hello.png" alt="image"></div>
     </div>
   </div>
 </div>
