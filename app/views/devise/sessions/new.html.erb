@@ -1,10 +1,10 @@
-<div class="title_background">
+<div class="login_title_background">
   <div class="page-header">
     <h2>ログイン</h2>
   </div>
   <p>
-    自分のマイページにログインします。<br>
-    ログインすると問題の進捗管理や間違った問題だけ復習できます。<br>
+    自分のマイページにログインします。
+    ログインすると問題の進捗管理や間違った問題だけ復習できます。
     マイページを作ってない方は無料アカウントを作成してください。
   </p>
 </div>
@@ -32,7 +32,7 @@
         <%= f.submit "ログイン" ,:class=>"form_login_btn col-xs-12" %>
       </div>
     <% end %>
+    <p class="new_account"><%= link_to "▶︎ アカウント作成はこちら", new_user_registration_path %></p>
+    <p class="forget_pass"><%= link_to "▶︎ パスワードを忘れた方はこちら", new_user_password_path %></p>
   </div>
-  <p class="new_account"><%= link_to "▶︎ アカウント作成はこちら", new_user_registration_path %></p>
-  <p class="forget_pass"><%= link_to "▶︎ パスワードを忘れた方はこちら", new_user_password_path %></p>
 </div>

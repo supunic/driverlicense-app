@@ -2,70 +2,66 @@
   <div class="page-header">
     <h1 class="title">運転免許問題集<br><small>学科試験対策の決定版！</small></h1>
   </div>
-  <p>このアプリは運転免許一発合格に特化した問題集アプリです。
+  <p class="col-sm-offset-1 col-sm-10">このアプリは運転免許一発合格に特化した問題集アプリです。
      ランダム一問一答機能では、問題数・分野別を自分で選択し空いた時間に気軽に対策が行えます。
      ログイン機能を使えば学習進捗を管理し、間違えた問題だけ集中して学習に取り組めます。
   </p>
   <% if user_signed_in? %>
-    <p class="question_btn col-xs-12"><%= link_to "一問一答", itimon_ittous_index_path %></p>
+    <p class="itimon_ittou_btn col-xs-12 col-sm-offset-3 col-sm-6"><%= link_to "一問一答", itimon_ittous_index_path %></p>
   <% else %>
-    <p class="question_btn_top col-xs-12"><%= link_to "さっそく問題を解いてみる！", itimon_ittous_index_path %></p>
+    <p class="question_btn_top col-xs-12 col-sm-offset-3 col-sm-6"><%= link_to "さっそく問題を解いてみる！", itimon_ittous_index_path %></p>
   <% end %>
 </div>
 <div class="home2">
-  <p class="question_btn col-xs-12"><%= link_to "問題一覧", questions_path %></p>
+  <p class="question_btn col-xs-12 col-sm-offset-3 col-sm-6"><%= link_to "問題一覧", questions_path %></p>
   <% if user_signed_in? %>
-    <p class="mypage_btn col-xs-12"><%= link_to "マイページ", user_path(current_user.id) %></p>
+    <p class="mypage_btn col-xs-12 col-sm-offset-3 col-sm-6"><%= link_to "マイページ", user_path(current_user.id) %></p>
   <% else %>
-    <p class="login_btn col-xs-12"><%= link_to "ログイン", new_user_session_path %></p>
+    <p class="login_btn col-xs-12 col-sm-offset-3 col-sm-6"><%= link_to "ログイン", new_user_session_path %></p>
   <% end %>
-  <p class="usage_btn col-xs-12"><%= link_to "使い方",  '#sec0' %></p>
+  <p class="usage_btn col-xs-12 col-sm-offset-3 col-sm-6"><%= link_to "使い方",  '#sec0' %></p>
 </div>
 <div id="sec0" class="home3_background">
   <div class="home3">
     <div class="page-header">
       <h2 class="title">使い方<br><small>このサイトの機能と勉強方法を紹介</small></h2>
     </div>
-    <a href='#sec1' class="sec1">問題一覧から解く</a>
-    <a href='#sec2' class="sec2">一問一答で解く</a>
-    <a href='#sec3' class="sec3">間違えた問題だけ解く</a>
+    <a href='#sec1' class="sec1 col-sm-offset-3 col-sm-6">▷ 問題一覧から解く</a>
+    <a href='#sec2' class="sec2 col-sm-offset-3 col-sm-6">▷ 一問一答で解く</a>
+    <a href='#sec3' class="sec3 col-sm-offset-3 col-sm-6">▷ 間違えた問題だけ解く</a>
   </div>
 </div>
 <div id="sec1" class="home4_background">
   <div class="home4">
     <div class="page-header"><h2>問題一覧から解く<br><small>とにかく問題を解きたい方はこちら！</small></h2></div>
-    <p>問題一覧では、出題分野別に学科試験問題を掲載しております。ワンタッチですぐに答えを確認でき、
+    <p class="col-sm-offset-3 col-sm-6">問題一覧では、出題分野別に学科試験問題を掲載しております。ワンタッチですぐに答えを確認でき、
        通勤・通学の合間で気軽に学科試験対策が行えます。学習した知識のアウトプットに最適です。
     </p>
     <div class="home_image_sec1"><img src="/assets/sec1"></div>
-    <p class="home4_question_btn col-xs-12"><%= link_to "問題一覧へ", questions_path %></p>
+    <p class="home4_question_btn col-xs-12 col-sm-offset-3 col-sm-6"><%= link_to "問題一覧へ", questions_path %></p>
   </div>
 </div>
 <div id="sec2" class="home5_background">
   <div class="home5">
     <div class="page-header"><h2>一問一答で解く<br><small>腕試ししたい方はこちら！</small></h2></div>
-    <p>一問一答では、問題一覧からランダムに問題が出題されます。○×ボタンで解答し、
+    <p class="col-sm-offset-3 col-sm-6">一問一答では、問題一覧からランダムに問題が出題されます。○×ボタンで解答し、
        こちらもすぐに解答が確認できます。出題数や問題範囲を選択できるので、お好みに合わせて
        一問一答することができます。
     </p>
     <div class="home_image_sec2"><img src="/assets/sec2"></div>
-    <p class="home5_question_btn col-xs-12"><%= link_to "一問一答へ", itimon_ittous_index_path %></p>
+    <p class="home5_question_btn col-xs-12 col-sm-offset-3 col-sm-6"><%= link_to "一問一答へ", itimon_ittous_index_path %></p>
   </div>
 </div>
 <div id="sec3" class="home6_background">
   <div class="home6">
     <div class="page-header"><h2>間違えた問題だけ解く<br><small>完璧に問題演習したい方はこちら！</small></h2></div>
-    <p>アカウント作成を行うと、間違った問題だけ選択して一問一答を行うことができます。
+    <p class="col-sm-offset-3 col-sm-6">アカウント作成を行うと、間違った問題だけ選択して一問一答を行うことができます。
        自分の苦手な問題のみ集中して取り組むことで、学習効率が高まります。また、マイページでは学習進捗を
        確認することができるので、問題演習が完璧になるまで行えます。
     </p>
     <div class="home_image_sec3"><img src="/assets/sec3"></div>
-    <p class="home6_question_btn col-xs-12"><%= link_to "アカウント作成", new_user_registration_path %></p>
+    <p class="home6_question_btn col-xs-12 col-sm-offset-3 col-sm-6"><%= link_to "アカウント作成", new_user_registration_path %></p>
   </div>
-</div>
-<div  class="home7">
-  <p class="bottom_nav col-xs-12"><%= link_to "お問い合わせ", new_contact_path %></p>
-    <p class="bottom_nav col-xs-12"><%= link_to "利用規約", toss_index_path %></p>
 </div>
 
 <script>

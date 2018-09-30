@@ -19,6 +19,7 @@ ul {
 
 .questions_index_1 {
   padding: 0 10px 30px 10px;
+  height: 150px;
 }
 
 
@@ -36,16 +37,22 @@ ul {
   color: #fff;
 }
 
+@media screen and (min-width:768px){
+  .questions_index_2 {
+    height: 900px;
+  }
+}
+
 .temporary_btn{
   height: 60px;
-  border-radius: 8px;
-  background-color: #fff;
-  margin: 10px 0;
+  margin-top: 20px;
   text-align: center;
 }
 
 .temporary_btn a {
   color: #202f55;
+  border-radius: 8px;
+  background-color: #fff;
   font-size: 16px;
   display: block;
   padding: 20px;
@@ -67,8 +74,6 @@ ul {
 
 .temporary_test_btn{
   height: 60px;
-  border-radius: 8px;
-  background-color: #202f55;
   margin: 10px 0;
   text-align: center;
 }
@@ -78,6 +83,8 @@ ul {
   font-size: 16px;
   display: block;
   padding: 20px;
+  border-radius: 8px;
+  background-color: #202f55;
 }
 
 // 本試験部分
@@ -92,10 +99,14 @@ ul {
   color: #fff;
 }
 
+@media screen and (min-width:768px){
+  .questions_index_3 {
+    height: 900px;
+  }
+}
+
 .main_btn{
   height: 60px;
-  border-radius: 8px;
-  background-color: #fff;
   margin-top: 20px;
   text-align: center;
 }
@@ -106,6 +117,8 @@ ul {
   font-size: 16px;
   display: block;
   padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
 }
 
 .main_btn:active {
@@ -124,8 +137,6 @@ ul {
 
 .main_test_btn{
   height: 60px;
-  border-radius: 8px;
-  background-color: #202f55;
   margin: 10px 0;
   text-align: center;
 }
@@ -135,6 +146,8 @@ ul {
   font-size: 16px;
   display: block;
   padding: 20px;
+  border-radius: 8px;
+  background-color: #202f55;
 }
 
 
@@ -147,6 +160,11 @@ ul {
   margin-bottom: 30px;
 }
 
+@media screen and (min-width:768px){
+  .devide_question_background {
+    margin: 0 150px 30px 150px;
+  }
+}
 
 // 答えを隠すcss
 .devide_answer_div {

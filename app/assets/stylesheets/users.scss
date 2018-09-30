@@ -29,6 +29,12 @@
   text-align: center;
 }
 
+@media screen and (min-width:768px){
+  .mypage1 {
+    margin: 0 150px;
+  }
+}
+
 .mypage2_background {
   background-color: #eee;
 }
@@ -38,6 +44,12 @@
   margin: 0 10px;
   padding-top: 20px;
   text-align: center;
+}
+
+@media screen and (min-width:768px){
+  .mypage2 {
+    margin: 0 150px;
+  }
 }
 
 .mypage3_background {

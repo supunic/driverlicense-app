@@ -1,7 +1,23 @@
 .title_background {
   margin: 0 10px 20px 10px;
+  height: 290px;
+}
+.login_title_background {
+  margin: 0 10px 20px 10px;
+  height: 150px;
 }
 
+@media screen and (min-width:768px){
+  .title_background {
+    margin: 0 150px;
+  }
+}
+
+@media screen and (min-width:768px){
+  .login_title_background {
+    margin: 0 150px;
+  }
+}
 
 .registrations_background {
   background-color: #202f55;
@@ -12,6 +28,12 @@
   margin: 20px 36px;
   padding: 30px 0;
   text-align: center;
+}
+
+@media screen and (min-width:768px){
+  .registrations {
+    margin: 0 150px;
+  }
 }
 
 .pass_new_background {
@@ -25,6 +47,12 @@
   text-align: center;
 }
 
+@media screen and (min-width:768px){
+  .pass_new {
+    margin: 0 150px;
+  }
+}
+
 .login_background {
   background-color: #202f55;
   height: 500px;
@@ -35,6 +63,12 @@
 .login {
   margin: 20px 10px;
   padding: 30px 0;
+}
+
+@media screen and (min-width:768px){
+  .login {
+    margin: 0 150px;
+  }
 }
 
 .name {

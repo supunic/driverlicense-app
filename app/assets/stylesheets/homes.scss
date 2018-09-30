@@ -9,6 +9,7 @@ html {
 
 body {
   font-family: "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+  text-align: center;
 }
 
 a {
@@ -81,7 +82,7 @@ a:hover {
   height: 60px;
   background-color: rgb(222, 63, 63);
   border-radius: 8px;
-  margin-top: 20px;
+  margin-top: 40px;
   text-align: center;
 }
 
@@ -100,8 +101,14 @@ a:hover {
 // ホーム２関連
 
 .home2 {
-  height: 330px;
+  height: 340px;
   margin: 0 10px 50px 10px;
+}
+
+@media screen and (min-width:768px){
+  .home2 {
+    height: 310px;
+  }
 }
 
 
@@ -121,6 +128,25 @@ a:hover {
 }
 
 .login_btn:active {
+  opacity: 0.5;
+}
+
+.itimon_ittou_btn{
+  height: 60px;
+  background-color: #202f55;
+  border-radius: 8px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.itimon_ittou_btn a {
+  color: #fff;
+  font-size: 16px;
+  display: block;
+  padding: 20px;
+}
+
+.itimon_ittou_btn:active {
   opacity: 0.5;
 }
 
@@ -272,6 +298,7 @@ a:hover {
   border-radius: 8px;
   box-shadow:5px 5px 10px;
   border:1px solid #000;
+  margin-top: 30px;
   margin-bottom: 5px;
 }
 
@@ -315,6 +342,7 @@ a:hover {
   border-radius: 8px;
   box-shadow:5px 5px 10px;
   border:1px solid #000;
+  margin-top: 30px;
   margin-bottom: 5px;
 }
 
@@ -345,10 +373,10 @@ a:hover {
 }
 
 .home6 {
-  height: 840px;
+  height: 900px;
   margin: 0 10px;
   padding: 20px 0;
-  color: #202f55;
+  color: #333;
 }
 
 .home_image_sec3 {
@@ -360,6 +388,7 @@ a:hover {
   border-radius: 8px;
   box-shadow:5px 5px 10px;
   border:1px solid #000;
+  margin-top: 30px;
   margin-bottom: 5px;
 }
 
@@ -380,35 +409,4 @@ a:hover {
 
 .home6_question_btn:active {
   opacity: 0.7;
-}
-
-// ホーム７関連
-
-
-.home7 {
-  background-color: #eee;
-  height: 147px;
-}
-
-
-
-.bottom_nav {
-  height: 50px;
-  // padding-top: 15px;
-  border: solid 1px #333;
-  text-align: center;
-}
-
-.bottom_nav a {
-  color: #333;
-  text-decoration: none;
-  display: block;
-  padding: 15px 0;
-}
-
-.usage {
-  background-color: #ccc;
-  height: 50px;
-  margin-top: 10px;
-  border-radius: 8px;
 }

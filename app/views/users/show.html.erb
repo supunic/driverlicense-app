@@ -11,8 +11,9 @@
           <small><%= current_user.name %>さん、こんにちは！</small>
         </h1>
       </div>
-      <p>マイページでは学習進捗を確認できます。<br>
-         自分の学習進捗に合わせてカリキュラムを選んでください。<br>
+      <p class="col-xs-12 col-sm-offset-3 col-sm-6">
+        マイページでは学習進捗を確認できます。
+        自分の学習進捗に合わせて、カリキュラムをお選びください。<br>
          <br>
          ※問題一覧の「仮免学科問題1〜3」と「卒業前効果測定1〜2」を除いた進捗率、及び正答率になります。
       </p>
@@ -23,7 +24,7 @@
   <div class="mypage1">
     <h2>学習進捗</h2>
     <div class="progress">
-      <div id ="answer_progress" class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow=@aria_valuenow aria-valuemin="0" aria-valuemax="100">
+      <div id="answer_progress" class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow=@aria_valuenow aria-valuemin="0" aria-valuemax="100">
         <%= @answer_valuenow.round(1) %>%
       </div>
     </div>
@@ -44,8 +45,8 @@
 <div class="mypage3_background">
   <div class="mypage3">
     <h2>カリキュラム</h2>
-    <p class="curriculum_btn col-xs-offset-1 col-xs-10 col-xs-offset-1"><%= link_to "一問一答に挑戦", itimon_ittous_index_path %></p>
-    <p class="curriculum_btn col-xs-offset-1 col-xs-10 col-xs-offset-1"><%= link_to "分野別で問題を解く", questions_path %></p>
+    <p class="curriculum_btn col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6"><%= link_to "一問一答に挑戦", itimon_ittous_index_path %></p>
+    <p class="curriculum_btn col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6"><%= link_to "分野別で問題を解く", questions_path %></p>
   </div>
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <!-- menkyo_app_adsense2 -->
@@ -61,8 +62,8 @@
 </div>
 <div class="mypage4_background">
   <div class="mypage4">
-    <p class="logout_btn col-xs-offset-1 col-xs-10 col-xs-offset-1"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
-    <p class="delete_btn col-xs-offset-1 col-xs-10 col-xs-offset-1"><%= link_to "アカウント削除", user_path(current_user.id), method: :delete, data: { confirm: 'アカウントを削除します。OKを押した時点で削除されますが、よろしいですか？'} %></p>
+    <p class="logout_btn col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
+    <p class="delete_btn col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6"><%= link_to "アカウント削除", user_path(current_user.id), method: :delete, data: { confirm: 'アカウントを削除します。OKを押した時点で削除されますが、よろしいですか？'} %></p>
   </div>
 </div>
 
