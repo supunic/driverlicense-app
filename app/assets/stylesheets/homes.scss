@@ -4,7 +4,7 @@ html {
   position: relative;
   min-height: 100%;
   margin: 0 auto;
-  max-width: 980px;
+  max-width: 1040px;
 }
 
 body {
@@ -62,6 +62,10 @@ a {
 
 a:hover {
   color: #fff;
+}
+
+.msg {
+  text-align: left;
 }
 
 .alert.alert-danger.alert-dismissible {

@@ -1,19 +1,41 @@
 .tos1 {
-  margin: 0 10px;
+  margin: 0 30px;
 }
-// .tos2_background {
-//   background-color: #202f55;
-//   color: #fff;
-// }
+
+@media screen and (min-width:768px){
+  .tos1 {
+    padding: 10px 100px;
+  }
+}
+
+@media screen and (min-width:1024px){
+  .tos1 {
+    padding: 10px 200px;
+  }
+}
+
 .tos2 {
-  margin: 0 10px 120px 10px;
-  // padding: 30px 0;
+  margin: 0 30px 120px 30px;
+  text-align: left;
+}
+
+@media screen and (min-width:768px){
+  .tos2 {
+    padding: 10px 100px;
+  }
+}
+
+@media screen and (min-width:1024px){
+  .tos2 {
+    padding: 10px 200px;
+  }
 }
 
 .bottom_nav {
   border-radius: 8px;
   border: solid 1px #333;
   height: 38px;
+  text-align: center;
 }
 
 .bottom_nav a {

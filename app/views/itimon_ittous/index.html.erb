@@ -277,8 +277,8 @@ $(function(){
       };
     };
     var percentageOfCorrectAnswers = true_num / value.length *100;
-    $('#resultModal').prepend('<p class="seitouritu">' + value.length + '問中' + true_num + '問正解！' +  '(正答率：' + percentageOfCorrectAnswers.toFixed(1) + '%)</p>');
-    $('#resultModal').prepend('<div class="page-header"><h1 class="kekka_modal">今回の結果</h1></div>');
+    $('#resultModal').prepend('<div class="seitouritu">' + value.length + '問中' + true_num + '問正解！' +  '(正答率：' + percentageOfCorrectAnswers.toFixed(1) + '%)</div>');
+    $('#resultModal').prepend('<div class="page-header"><h1 class="kekka">今回の結果</h1></div>');
     for (var i = 0;  i < value.length; i++) {
       var n = i + 1;
       var questionId = samples[i].id
@@ -298,14 +298,6 @@ $(function(){
       }else{
         $('#result_image').children('img').hide();
       };
-      // if(samples[i].image){
-      //   var src = $('#resultModal').children('img').attr('src').replace('hello.png', samples[gon.count].image);
-      //   $('#resultModal').children('img').attr('src', src);
-      //   $('#resultModal').children('img').fadeIn();
-      // }else{
-      //   $('#resultModal').children('img').hide();
-      // };
-
 
       $('#resultModal').append('<div class="result_question">' + samples[i].content + '</div>');
       if(samples[i].answer == true){
@@ -321,20 +313,17 @@ $(function(){
     gon.result = {};
     $('#resultModal').append('<div class="kakunin_btn"><a href="/itimon_ittous/index" >もう一度挑戦</a></div>');
     $('#resultModal').append('<div class="kakunin_btn"><a href="/" >ホームへ</a></div>');
-    // $('.question_modal_overlay').fadeIn();
-    // modalResize();
+    $(window).on('resize', function(){
+      modalResize();
+    });
+    function modalResize(){
+      var w = $(window).width();
+      var h = $(window).height();
+      var x = (w - $('#resultModal').outerWidth(true)) / 2;
+      var y = (h - $('#resultModal').outerHeight(true)) / 4;
+      $('#resultModal').css({'left': x + 'px','top': 0 + 'px'});
+    };
     $('#resultModal').fadeIn();
-    // $(window).on('resize', function(){
-    //   modalResize();
-    // });
-    // function modalResize(){
-    //   var w = $(window).width();
-    //   var h = $(window).height();
-    //   var x = (w - $('#resultModal').outerWidth(true)) / 2;
-    //   var y = (h - $('#resultModal').outerHeight(true)) / 4;
-    //   $('#resultModal').css({'left': x + 'px','top': 0 + 'px'});
-    //   debugger
-    // };
   });
 });
 
@@ -347,7 +336,7 @@ $(function(){
   <div class="page-header">
     <h1>一問一答<br><small>問題一覧からランダムに出題</small></h1>
   </div>
-  <p class="setsumei col-sm-offset-3 col-sm-6">ランダムに出題される問題を一問一答していきます。
+  <p class="msg col-sm-offset-3 col-sm-6">ランダムに出題される問題を一問一答していきます。
      問題数・出題範囲を選択し、「決定」ボタンを押してください。
   </p>
 </div>

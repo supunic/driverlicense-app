@@ -36,6 +36,18 @@
   border-radius: 8px;
 }
 
+@media screen and (min-width:700px){
+  .question_modal {
+    width: 75%;
+  }
+}
+
+@media screen and (min-width:1024px){
+  .question_modal {
+    width: 50%;
+  }
+}
+
 .question_modal p {
   margin:0;
   padding:0;
@@ -66,6 +78,7 @@
   padding: 10px;
   border-radius: 8px;
   margin: 10px 0;
+  text-align: left;
 }
 
 // ○ボタン
@@ -161,6 +174,18 @@
   border-radius: 8px;
 }
 
+@media screen and (min-width:768px){
+  .answer_modal {
+    width: 75%;
+  }
+}
+
+@media screen and (min-width:1024px){
+  .answer_modal {
+    width: 50%;
+  }
+}
+
 .answer {
   font-size: 20px;
   font-weight: bold;
@@ -175,6 +200,7 @@
   border: solid 2px #aaa;
   padding: 10px;
   border-radius: 8px;
+  text-align: left;
 }
 
 // 解答時に生成する正誤表記
@@ -227,6 +253,18 @@
   border:2px solid #aaa;
   background:#fff;
   border-radius: 8px;
+}
+
+@media screen and (min-width:768px){
+  .result_modal {
+    padding: 10px 200px;
+  }
+}
+
+@media screen and (min-width:1024px){
+  .result_modal {
+    padding: 10px 300px;
+  }
 }
 
 .result_modal p {
@@ -343,7 +381,7 @@
 
 
 // 結果画面
-.kekka_modal {
+.kekka {
   text-align: left;
 }
 
@@ -354,6 +392,7 @@
   // width: 80px;
   color: #fff;
   border-radius: 6px;
+  text-align: center;
 }
 
 .result_true {
@@ -385,7 +424,7 @@
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   font-weight: bold;
-  text-align: left;
+  text-align: center;
 }
 
 .result_explanation {
