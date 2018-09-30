@@ -21,7 +21,7 @@
 
 .registrations_background {
   background-color: #202f55;
-  height: 930px;
+  height: 940px;
 }
 
 .registrations {
@@ -131,6 +131,13 @@
   text-align: center;
 }
 
+.form_registration_btn {
+  height: 60px;
+  background-color: #fff;
+  border-radius: 8px;
+  margin: 50px 0 40px 0;
+  text-align: center;
+}
 .new_account {
   margin-bottom: 25px;
 }

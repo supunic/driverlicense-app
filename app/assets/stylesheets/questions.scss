@@ -68,8 +68,14 @@ ul {
 
 .questions_index_2_5 {
   padding: 1px 10px 0 10px;
-  height: 330px;
+  height: 660px;
   color: #202f55;
+}
+
+@media screen and (min-width:768px){
+  .questions_index_2_5 {
+    height: 330px;
+  }
 }
 
 .temporary_test_btn{
@@ -131,8 +137,14 @@ ul {
 
 .questions_index_3_5 {
   padding: 1px 10px 0 10px;
-  height: 290px;
+  height: 620px;
   color: #202f55;
+}
+
+@media screen and (min-width:768px){
+  .questions_index_3_5 {
+    height: 300px;
+  }
 }
 
 .main_test_btn{
