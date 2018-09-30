@@ -249,7 +249,7 @@ a:hover {
 // ホーム４関連
 
 .home4_background {
-  background-color: #eee;
+  background-color: #fff;
 }
 
 .usage_explanation {
@@ -258,9 +258,21 @@ a:hover {
 }
 
 .home4 {
-  height: 1320px;
+  height: 710px;
   margin: 0 10px;
   padding: 20px 0;
+}
+
+.home_image_sec1 {
+  text-align: center;
+  margin: 20px 0;
+}
+.home_image_sec1 img{
+  width: 300px;
+  border-radius: 8px;
+  box-shadow:5px 5px 10px;
+  border:1px solid #000;
+  margin-bottom: 5px;
 }
 
 .home4_question_btn{
@@ -282,56 +294,28 @@ a:hover {
   opacity: 0.7;
 }
 
-
-.image_sec1-1 {
-  background-size: cover;
-  background-image: image-url("sec1-1.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 360px;
-  border-radius: 8px;
-  margin: 10px 0 30px 0;
-  max-width: 360px;
-  border: ridge 8px #ddd;
-}
-
-.image_sec1-2 {
-  background-size: cover;
-  background-image: image-url("sec1-2.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 240px;
-  background-color: #ccc;
-  border-radius: 8px;
-  border: ridge 8px #ddd;
-  margin: 10px 0 30px 0;
-  max-width: 360px;
-}
-
-.image_sec1-3 {
-  background-size: cover;
-  background-image: image-url("sec1-3.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 290px;
-  background-color: #ccc;
-  border-radius: 8px;
-  border: ridge 8px #ddd;
-  margin: 10px 0 30px 0;
-  max-width: 360px;
-}
-
-
 // ホーム５関連
 
 .home5_background {
-  background-color: #fff;
+  background-color: #ddd;
 }
 
 .home5 {
-  height: 1880px;
+  height: 690px;
   margin: 0 10px;
   padding: 20px 0;
+}
+
+.home_image_sec2 {
+  text-align: center;
+  margin: 20px 0;
+}
+.home_image_sec2 img{
+  width: 300px;
+  border-radius: 8px;
+  box-shadow:5px 5px 10px;
+  border:1px solid #000;
+  margin-bottom: 5px;
 }
 
 .home5_question_btn{
@@ -353,69 +337,42 @@ a:hover {
   opacity: 0.7;
 }
 
-.image_sec2-1 {
-  background-size: cover;
-  background-image: image-url("sec2-1.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 550px;
-  border-radius: 8px;
-  border: ridge 8px #ddd;
-  margin: 10px 0 30px 0;
-  max-width: 360px;
-}
-
-.image_sec2-2 {
-  background-size: cover;
-  background-image: image-url("sec2-2.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 400px;
-  background-color: #eee;
-  border-radius: 8px;
-  border: ridge 8px #ddd;
-  margin: 10px 0 30px 0;
-  max-width: 360px;
-}
-
-.image_sec2-3 {
-  background-size: cover;
-  background-image: image-url("sec2-3.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 500px;
-  background-color: #ccc;
-  border-radius: 8px;
-  border: ridge 8px #ddd;
-  margin: 10px 0 30px 0;
-  max-width: 360px;
-}
-
-
 
 // ホーム６関連
 
 .home6_background {
-  background-color: #202f55;
+  background-color: #fff;
 }
 
 .home6 {
-  height: 1810px;
+  height: 840px;
   margin: 0 10px;
   padding: 20px 0;
-  color: #fff;
+  color: #202f55;
+}
+
+.home_image_sec3 {
+  text-align: center;
+  margin: 20px 0;
+}
+.home_image_sec3 img{
+  width: 300px;
+  border-radius: 8px;
+  box-shadow:5px 5px 10px;
+  border:1px solid #000;
+  margin-bottom: 5px;
 }
 
 .home6_question_btn{
   height: 60px;
-  background-color: #fff;
+  background-color: #202f55;
   border-radius: 8px;
   margin-top: 20px;
   text-align: center;
 }
 
 .home6_question_btn a {
-  color: #202f55;
+  color: #fff;
   font-size: 16px;
   display: block;
   padding: 20px;
@@ -423,45 +380,6 @@ a:hover {
 
 .home6_question_btn:active {
   opacity: 0.7;
-}
-
-
-.image_sec3-1 {
-  background-size: cover;
-  background-image: image-url("sec3-1.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 500px;
-  border-radius: 8px;
-  border: ridge 8px #eee;
-  margin: 10px 0 30px 0;
-  max-width: 360px;
-}
-
-.image_sec3-2 {
-  background-size: cover;
-  background-image: image-url("sec3-2.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 410px;
-  background-color: #eee;
-  border-radius: 8px;
-  border: ridge 8px #fff;
-  margin: 10px 0 30px 0;
-  max-width: 360px;
-}
-
-.image_sec3-3 {
-  background-size: cover;
-  background-image: image-url("sec3-3.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 460px;
-  background-color: #ccc;
-  border-radius: 8px;
-  border: ridge 8px #eee;
-  margin: 10px 0 30px 0;
-  max-width: 360px;
 }
 
 // ホーム７関連
@@ -494,10 +412,3 @@ a:hover {
   margin-top: 10px;
   border-radius: 8px;
 }
-
-
-// .image {
-//   height: 100px;
-//   background-color: #ccc;
-//   border-radius: 8px;
-// }
