@@ -313,16 +313,16 @@ $(function(){
     gon.result = {};
     $('#resultModal').append('<div class="kakunin_btn"><a href="/itimon_ittous/index" >もう一度挑戦</a></div>');
     $('#resultModal').append('<div class="kakunin_btn"><a href="/" >ホームへ</a></div>');
-    $(window).on('resize', function(){
-      modalResize();
-    });
-    function modalResize(){
-      var w = $(window).width();
-      var h = $(window).height();
-      var x = (w - $('#resultModal').outerWidth(true)) / 2;
-      var y = (h - $('#resultModal').outerHeight(true)) / 4;
-      $('#resultModal').css({'left': x + 'px','top': 0 + 'px'});
-    };
+    // $(window).on('resize', function(){
+    //   modalResize();
+    // });
+    // function modalResize(){
+    //   var w = $(window).width();
+    //   var h = $(window).height();
+    //   var x = (w - $('#resultModal').outerWidth(true)) / 2;
+    //   var y = (h - $('#resultModal').outerHeight(true)) / 4;
+    //   $('#resultModal').css({'left': x + 'px','top': 0 + 'px'});
+    // };
     $('#resultModal').fadeIn();
   });
 });
