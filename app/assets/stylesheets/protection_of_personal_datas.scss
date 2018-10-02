@@ -1,1 +1,49 @@
+.popd1 {
+  margin: 0 30px;
+}
 
+.popd_top {
+  text-align: left;
+}
+
+@media screen and (min-width:768px){
+  .popd1 {
+    padding: 10px 100px;
+  }
+}
+
+@media screen and (min-width:1024px){
+  .popd1 {
+    padding: 10px 200px;
+  }
+}
+
+.popd2 {
+  margin: 0 30px 120px 30px;
+  text-align: left;
+}
+
+@media screen and (min-width:768px){
+  .popd2 {
+    padding: 10px 100px;
+  }
+}
+
+@media screen and (min-width:1024px){
+  .popd2 {
+    padding: 10px 200px;
+  }
+}
+
+.bottom_nav {
+  border-radius: 8px;
+  border: solid 1px #333;
+  height: 38px;
+  text-align: center;
+}
+
+.bottom_nav a {
+  color: #333;
+  display: block;
+  padding: 8px;
+}
