@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'tests/letsencrypt'
+
+  # ssl証明書発行用
+  get ".well-known/acme-challenge/:id" => "tests#letsencrypt"
+
   get 'lisence_informations/index'
 
   get 'operations/index'
