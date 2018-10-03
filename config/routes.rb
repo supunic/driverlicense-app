@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '.well-known/acme-challenge#index'
+
   get 'lisence_informations/index'
 
   get 'operations/index'
