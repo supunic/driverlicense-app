@@ -28,6 +28,9 @@
         <%= @answer_valuenow.round(1) %>%
       </div>
     </div>
+    <% if @answer_valuenow == 100 %>
+      <p>おめでとうございます！</p>
+    <% end %>
     <span><%= current_user.name %>さんの進捗は<%= @answer_valuenow.round(1) %>%です。</span>
   </div>
 </div>
@@ -39,6 +42,9 @@
         <%= @collect_answer_valuenow.round(1)  %>%
       </div>
     </div>
+    <% if @collect_answer_valuenow == 100 %>
+      <p>おめでとうございます！</p>
+    <% end %>
     <span><%= current_user.name %>さんの正答率は<%= @collect_answer_valuenow.round(1) %>%です。</span>
   </div>
 </div>
