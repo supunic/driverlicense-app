@@ -76,7 +76,7 @@ $(function(){
     selectdFieldQuestions();
     onlyWrongQuestions();
     if(userSelectQuestions.length == 0){
-      $('.itimon_ittou1').prepend('<div id="noQuestionAlart" class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">close</span></button>選択した範囲で出題できる問題がありません</div>')
+      $('#itimon_ittou_alart').prepend('<div id="noQuestionAlart" class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">close</span></button>選択した範囲で出題できる問題がありません</div>')
     }else if(select_num > userSelectQuestions.length){
       $('#noQuestionAlart').hide();
       samples = random(userSelectQuestions, userSelectQuestions.length);
@@ -331,7 +331,8 @@ $(function(){
 
 </script>
 
-
+<div id="itimon_ittou_alart">
+</div>
 <div class="itimon_ittou1">
   <div class="page-header">
     <h1>一問一答<br><small>問題一覧からランダムに出題</small></h1>
@@ -350,6 +351,7 @@ $(function(){
         <option value="15">15</option>
         <option value="20">20</option>
         <option value="30">30</option>
+        <option value="50">50</option>
       </select>
     </div>
     <div class="select_field_div">
