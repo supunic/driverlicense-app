@@ -1,10 +1,46 @@
 .title_background {
-  margin: 0 10px 20px 10px;
+  margin: 0 30px 20px 30px;
   height: 290px;
+  text-align: left;
 }
+
+.saisettei_background {
+  margin: 0 30px 20px 30px;
+  height: 160px;
+  text-align: left;
+}
+
+.saisettei2_background {
+  margin: 0 30px 20px 30px;
+  height: 130px;
+  text-align: left;
+}
+
 .login_title_background {
-  margin: 0 10px 20px 10px;
+  margin: 0 30px 20px 30px;
   height: 150px;
+}
+
+.saisettei_title {
+  text-align: center;
+  font-size: 28px;
+}
+
+.registration_title {
+  text-align: center;
+  font-size: 30px;
+}
+
+@media screen and (min-width:768px){
+  .saisettei_background {
+    margin: 0 150px;
+  }
+}
+
+@media screen and (min-width:768px){
+  .saisettei2_background {
+    margin: 0 150px;
+  }
 }
 
 @media screen and (min-width:768px){
@@ -16,6 +52,30 @@
 @media screen and (min-width:768px){
   .login_title_background {
     margin: 0 150px;
+  }
+}
+
+@media screen and (min-width:1024px){
+  .saisettei_background {
+    margin: 0 300px;
+  }
+}
+
+@media screen and (min-width:1024px){
+  .saisettei2_background {
+    margin: 0 300px;
+  }
+}
+
+@media screen and (min-width:1024px){
+  .title_background {
+    margin: 0 300px;
+  }
+}
+
+@media screen and (min-width:1024px){
+  .login_title_background {
+    margin: 0 300px;
   }
 }
 
@@ -36,6 +96,12 @@
   }
 }
 
+@media screen and (min-width:1024px){
+  .registrations {
+    margin: 0 300px;
+  }
+}
+
 .pass_new_background {
   background-color: #202f55;
   height: 500px;
@@ -50,6 +116,12 @@
 @media screen and (min-width:768px){
   .pass_new {
     margin: 0 150px;
+  }
+}
+
+@media screen and (min-width:1024px){
+  .pass_new {
+    margin: 0 300px;
   }
 }
 
@@ -68,6 +140,12 @@
 @media screen and (min-width:768px){
   .login {
     margin: 0 150px;
+  }
+}
+
+@media screen and (min-width:1024px){
+  .login {
+    margin: 0 300px;
   }
 }
 

@@ -113,8 +113,6 @@ $(function(){
 	      };
       };
       $('#field').html('分野：' + fieldName);
-      // $('#question').html(samples[gon.count].image);
-      // $('#image').children('img').attr('src', samples[gon.count].image);
       if(samples[gon.count].image){
         var src = $('#image').children('img').attr('src').replace('hello.png', samples[gon.count].image);
         $('#image').children('img').attr('src', src);
@@ -122,7 +120,6 @@ $(function(){
       }else{
         $('#image').children('img').hide();
       };
-      // $('#image').children('img').attr('src', src);
       $('#question').html(samples[gon.count].content);
       $('#questionModal').fadeIn();
       $(window).on('resize', function(){
@@ -313,22 +310,9 @@ $(function(){
     gon.result = {};
     $('#resultModal').append('<div class="kakunin_btn"><a href="/itimon_ittous/index" >もう一度挑戦</a></div>');
     $('#resultModal').append('<div class="kakunin_btn"><a href="/" >ホームへ</a></div>');
-    // $(window).on('resize', function(){
-    //   modalResize();
-    // });
-    // function modalResize(){
-    //   var w = $(window).width();
-    //   var h = $(window).height();
-    //   var x = (w - $('#resultModal').outerWidth(true)) / 2;
-    //   var y = (h - $('#resultModal').outerHeight(true)) / 4;
-    //   $('#resultModal').css({'left': x + 'px','top': 0 + 'px'});
-    // };
     $('#resultModal').fadeIn();
   });
 });
-
-
-
 </script>
 
 <div id="itimon_ittou_alart">
@@ -344,7 +328,7 @@ $(function(){
 <div class="itimon_ittou2_background">
   <div class="itimon_ittou2">
     <div class="select_num_div">
-      <h4 class="midashi">問題数を選ぶ</h4>
+      <h2 class="midashi">問題数を選ぶ</h2>
       <select id="select_num">
         <option value="5">5</option>
         <option value="10">10</option>
@@ -355,7 +339,7 @@ $(function(){
       </select>
     </div>
     <div class="select_field_div">
-      <h4 class="midashi">出題範囲を選ぶ</h4>
+      <h2 class="midashi">出題範囲を選ぶ</h2>
       <select id="select_field" class="select_field">
         <option value="all_fields">全ての範囲から出題</option>
         <option value="temporary">仮免許の範囲から出題</option>
@@ -365,7 +349,7 @@ $(function(){
       </select>
     </div>
     <div class="select_questions_div">
-      <h4 class="midashi">間違えた問題のみ出題</h4>
+      <h2 class="midashi">間違えた問題のみ出題</h2>
       <% if user_signed_in? %>
         <div class="switch">
           <label class="switch__label">
@@ -387,7 +371,7 @@ $(function(){
     <p class="hazimeru_btn col-xs-12 col-sm-offset-3 col-sm-6"><a data-target="#questionModal">はじめる</a></p>
 
     <div id="questionModal" class="question_modal">
-      <h2 class="question_modal_title">問題</h2>
+      <h3 class="question_modal_title">問題</h3>
       <p id="mondai_num" class="mondai_num"></p>
       <ul class="tab">
         <li id="field" class="field"></li>

@@ -37,15 +37,10 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
-
 gem 'letter_opener_web'
-
 gem 'rails_admin', '~> 1.3'
 gem 'cancancan', '~> 2.0'
-
 gem 'gon'
-
 gem 'carrierwave'
 gem 'mini_magick'
-
 gem 'kaminari'
