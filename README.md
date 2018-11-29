@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+このアプリは、運転免許の学科試験対策が行えます。
 
-Things you may want to cover:
+* 問題一覧から解く
+* 一問一答で解く
+* 間違えた問題だけ解く
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+上記の機能を搭載しており、自分に合った方法で問題を解くことができます。
